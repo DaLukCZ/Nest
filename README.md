@@ -18,7 +18,7 @@ Webová aplikace pro správu ptačích voliér, chovných párů, zdravotních z
 - **Krmení** - záznamy o krmení podle voliér, typy krmiva, doplňky stravy
 - **Zdravotní záznamy** - evidence nemocí, zranění, prohlídek a léčby pro každého ptáka
 - **Statistiky** - interaktivní grafy (zastoupení druhů, trendy hnízdění, zdravotní problémy, obsazenost voliér)
-- **Nastavení** - přepínání světlého/tmavého motivu, výběr jazyka (čeština/angličtina), export a import dat
+- **Nastavení** - výběr jazyka (čeština/angličtina), export a import dat
 - **Vícejazyčnost** - čeština (výchozí) a angličtina přes Vue I18n
 - **Responzivní rozvržení** - postranní navigace s fixní hlavičkou
 
