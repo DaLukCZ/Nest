@@ -10,18 +10,49 @@ export function formatDate(dateString, locale = 'cs-CZ') {
 }
 
 export function calculateAge(hatchDate) {
-  if (!hatchDate) return { months: 0, years: 0, label: '—' }
+  if (!hatchDate) {
+    return {
+      months: 0,
+      years: 0,
+      label: "—",
+      parts: {
+        years: 0,
+        months: 0,
+      },
+    }
+  }
+
   const now = new Date()
   const birth = new Date(hatchDate)
+
   const diffMs = now - birth
-  if (diffMs < 0) return { months: 0, years: 0, label: '—' }
+
+  if (diffMs < 0) {
+    return {
+      months: 0,
+      years: 0,
+      label: "—",
+      parts: {
+        years: 0,
+        months: 0,
+      },
+    }
+  }
+
   const totalMonths = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 30.44))
+
   const years = Math.floor(totalMonths / 12)
   const months = totalMonths % 12
-  let label = ''
-  if (years > 0) label += `${years} r. `
-  label += `${months} měs.`
-  return { months: totalMonths, years, label: label.trim() }
+
+  return {
+    months: totalMonths,
+    years,
+    label: "",
+    parts: {
+      years,
+      months,
+    },
+  }
 }
 
 export function formatTimeAgo(dateString) {

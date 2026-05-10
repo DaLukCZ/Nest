@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <div>
         <h1 class="text-2xl font-bold text-gray-900">{{ $t("feeding.feedingLogs") }}</h1>
-        <p class="text-base text-slate-600 mt-0.5">{{ feedingLogs.length }} záznamů</p>
+        <p class="text-base text-slate-600 mt-0.5">{{ feedingLogs.length }} {{ $t('common.records') }}</p>
       </div>
       <Button icon="pi pi-plus" :label="$t('feeding.addFeedingLog')" @click="openAddDialog" />
     </div>
@@ -11,7 +11,8 @@
     <!-- Recent feedings summary -->
     <div class="card p-5">
       <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("feeding.recentFeedings") }}</h3>
-      <div v-if="!recentFeedings.length" class="text-center py-6 text-slate-500 text-base">Zatím žádná krmení</div>
+      <div v-if="!recentFeedings.length" class="text-center py-6 text-slate-500 text-base">{{ $t('feeding.noFeedings')
+        }}</div>
       <div v-else class="space-y-3">
         <div v-for="log in recentFeedings" :key="log.id"
           class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
@@ -37,8 +38,8 @@
       <DataTable :value="feedingLogs" :loading="loading" paginator :rows="15" dataKey="id" stripedRows
         class="p-datatable-sm">
         <template #empty>
-          <EmptyState icon="pi pi-shopping-cart" title="Žádné záznamy krmení"
-            description="Přidejte první záznam pomocí tlačítka výše." />
+          <EmptyState icon="pi pi-shopping-cart" :title="$t('feeding.noFeedings')"
+            :description="$t('feeding.noFeedingsDescription')" />
         </template>
         <Column :header="$t('aviaries.aviaries')" sortable>
           <template #body="{ data }">
@@ -71,12 +72,12 @@
       <form @submit.prevent="saveLog" class="form-shell">
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Krmeni</h3>
-            <p class="form-section-description">Vyberte volieru, typ krmiva a mnozstvi.</p>
+            <h3 class="form-section-title">{{ $t("feeding.logDetails") }}</h3>
+            <p class="form-section-description">{{ $t("feeding.logDescription") }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
-              <label class="form-label">Voliéra *</label>
+              <label class="form-label">{{ $t("feeding.aviary") }}*</label>
               <Select v-model="logForm.aviaryId" :options="aviaries" option-label="name" option-value="id"
                 :placeholder="$t('feeding.selectAviary')" class="w-full" required />
             </div>
@@ -88,7 +89,7 @@
               </div>
               <div class="form-field">
                 <label class="form-label">{{ $t("feeding.quantity") }}</label>
-                <InputText v-model="logForm.quantity" placeholder="např. 200g" class="w-full" />
+                <InputText v-model="logForm.quantity" :placeholder="$t('feeding.quantityPlaceholder')" class="w-full" />
               </div>
             </div>
             <div class="form-field">
@@ -99,13 +100,14 @@
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Doplnky a poznamky</h3>
-            <p class="form-section-description">Vitaminy, doplnky a poznamky ke krmeni.</p>
+            <h3 class="form-section-title">{{ $t("feeding.supplementsAndNotes") }}</h3>
+            <p class="form-section-description">{{ $t("feeding.supplementsDescription") }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
               <label class="form-label">{{ $t("feeding.supplements") }}</label>
-              <InputText v-model="logForm.supplements" placeholder="např. Kalcium, Vitamín D" class="w-full" />
+              <InputText v-model="logForm.supplements" :placeholder="$t('feeding.supplementsPlaceholder')"
+                class="w-full" />
             </div>
             <div class="form-field">
               <label class="form-label">{{ $t("common.notes") }}</label>
@@ -120,7 +122,7 @@
       </form>
     </Dialog>
 
-    <DeleteConfirmDialog v-model="showDeleteDialog" title="Smazat záznam krmení?"
+    <DeleteConfirmDialog v-model="showDeleteDialog" :title="$t('feeding.confirmDelete')"
       :message="$t('messages.confirmDelete')" :loading="deleting" @confirm="doDeleteLog" />
   </div>
 </template>
@@ -169,7 +171,7 @@ const recentFeedings = computed(() =>
 )
 
 const getAviaryName = (id) => {
-  const av = aviaries.value.find((a) => a.id === id || a.id === +id)
+  const av = aviaries.value.find((a) => a.id == id || a.id == +id)
   return av ? av.name : `Voliéra ${id}`
 }
 

@@ -1,7 +1,7 @@
 {
   "birds": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Anglická",
@@ -16,7 +16,7 @@
       "aviaryId": 4
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Australská",
@@ -31,7 +31,7 @@
       "aviaryId": 2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Anglická",
@@ -46,7 +46,7 @@
       "aviaryId": 4
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sunny",
       "species": "Andulka",
       "variety": "Anglická",
@@ -61,7 +61,7 @@
       "aviaryId": 1
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Tina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -76,7 +76,7 @@
       "aviaryId": 1
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Coco",
       "species": "Andulka",
       "variety": "Australská",
@@ -91,7 +91,7 @@
       "aviaryId": 4
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Bella",
       "species": "Andulka",
       "variety": "Anglická",
@@ -106,7 +106,7 @@
       "aviaryId": 3
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Maya",
       "species": "Andulka",
       "variety": "Anglická",
@@ -121,7 +121,7 @@
       "aviaryId": 4
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Charlie",
       "species": "Andulka",
       "variety": "Anglická",
@@ -136,7 +136,7 @@
       "aviaryId": 2
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Rocky",
       "species": "Andulka",
       "variety": "Australská",
@@ -151,7 +151,7 @@
       "aviaryId": 4
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Charlie",
       "species": "Andulka",
       "variety": "Australská",
@@ -166,7 +166,7 @@
       "aviaryId": 3
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Australská",
@@ -181,7 +181,7 @@
       "aviaryId": 2
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Bella",
       "species": "Andulka",
       "variety": "Anglická",
@@ -196,7 +196,7 @@
       "aviaryId": 3
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Sunny",
       "species": "Andulka",
       "variety": "Australská",
@@ -211,7 +211,7 @@
       "aviaryId": 1
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Australská",
@@ -226,7 +226,7 @@
       "aviaryId": 4
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Tina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -241,7 +241,7 @@
       "aviaryId": 2
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Australská",
@@ -256,7 +256,7 @@
       "aviaryId": 4
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "Max",
       "species": "Andulka",
       "variety": "Anglická",
@@ -271,7 +271,7 @@
       "aviaryId": 3
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Australská",
@@ -286,7 +286,7 @@
       "aviaryId": 4
     },
     {
-      "id": 20,
+      "id": "20",
       "name": "Rocky",
       "species": "Andulka",
       "variety": "Australská",
@@ -301,7 +301,7 @@
       "aviaryId": 4
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "Nina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -316,7 +316,7 @@
       "aviaryId": 3
     },
     {
-      "id": 22,
+      "id": "22",
       "name": "Maya",
       "species": "Andulka",
       "variety": "Anglická",
@@ -331,7 +331,7 @@
       "aviaryId": 2
     },
     {
-      "id": 23,
+      "id": "23",
       "name": "Rocky",
       "species": "Andulka",
       "variety": "Australská",
@@ -346,7 +346,7 @@
       "aviaryId": 2
     },
     {
-      "id": 24,
+      "id": "24",
       "name": "Tina",
       "species": "Andulka",
       "variety": "Australská",
@@ -361,7 +361,7 @@
       "aviaryId": 1
     },
     {
-      "id": 25,
+      "id": "25",
       "name": "Maya",
       "species": "Andulka",
       "variety": "Australská",
@@ -376,7 +376,7 @@
       "aviaryId": 3
     },
     {
-      "id": 26,
+      "id": "26",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Anglická",
@@ -391,7 +391,7 @@
       "aviaryId": 3
     },
     {
-      "id": 27,
+      "id": "27",
       "name": "Riki",
       "species": "Andulka",
       "variety": "Anglická",
@@ -406,7 +406,7 @@
       "aviaryId": 1
     },
     {
-      "id": 28,
+      "id": "28",
       "name": "Rio",
       "species": "Andulka",
       "variety": "Anglická",
@@ -421,7 +421,7 @@
       "aviaryId": 2
     },
     {
-      "id": 29,
+      "id": "29",
       "name": "Kiki",
       "species": "Andulka",
       "variety": "Australská",
@@ -436,7 +436,7 @@
       "aviaryId": 1
     },
     {
-      "id": 30,
+      "id": "30",
       "name": "Tina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -451,7 +451,7 @@
       "aviaryId": 3
     },
     {
-      "id": 31,
+      "id": "31",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Anglická",
@@ -466,7 +466,7 @@
       "aviaryId": 4
     },
     {
-      "id": 32,
+      "id": "32",
       "name": "Sunny",
       "species": "Andulka",
       "variety": "Anglická",
@@ -481,7 +481,7 @@
       "aviaryId": 3
     },
     {
-      "id": 33,
+      "id": "33",
       "name": "Zoro",
       "species": "Andulka",
       "variety": "Anglická",
@@ -496,7 +496,7 @@
       "aviaryId": 4
     },
     {
-      "id": 34,
+      "id": "34",
       "name": "Zoro",
       "species": "Andulka",
       "variety": "Australská",
@@ -511,7 +511,7 @@
       "aviaryId": 3
     },
     {
-      "id": 35,
+      "id": "35",
       "name": "Charlie",
       "species": "Andulka",
       "variety": "Australská",
@@ -526,7 +526,7 @@
       "aviaryId": 4
     },
     {
-      "id": 36,
+      "id": "36",
       "name": "Rio",
       "species": "Andulka",
       "variety": "Anglická",
@@ -541,7 +541,7 @@
       "aviaryId": 4
     },
     {
-      "id": 37,
+      "id": "37",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Anglická",
@@ -556,7 +556,7 @@
       "aviaryId": 1
     },
     {
-      "id": 38,
+      "id": "38",
       "name": "Lili",
       "species": "Andulka",
       "variety": "Australská",
@@ -571,7 +571,7 @@
       "aviaryId": 1
     },
     {
-      "id": 39,
+      "id": "39",
       "name": "Rio",
       "species": "Andulka",
       "variety": "Anglická",
@@ -586,7 +586,7 @@
       "aviaryId": 2
     },
     {
-      "id": 40,
+      "id": "40",
       "name": "Zoro",
       "species": "Andulka",
       "variety": "Anglická",
@@ -601,7 +601,7 @@
       "aviaryId": 4
     },
     {
-      "id": 41,
+      "id": "41",
       "name": "Luna",
       "species": "Andulka",
       "variety": "Anglická",
@@ -616,7 +616,7 @@
       "aviaryId": 1
     },
     {
-      "id": 42,
+      "id": "42",
       "name": "Maya",
       "species": "Andulka",
       "variety": "Anglická",
@@ -631,7 +631,7 @@
       "aviaryId": 3
     },
     {
-      "id": 43,
+      "id": "43",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Australská",
@@ -646,7 +646,7 @@
       "aviaryId": 2
     },
     {
-      "id": 44,
+      "id": "44",
       "name": "Sunny",
       "species": "Andulka",
       "variety": "Anglická",
@@ -661,7 +661,7 @@
       "aviaryId": 3
     },
     {
-      "id": 45,
+      "id": "45",
       "name": "Nina",
       "species": "Andulka",
       "variety": "Australská",
@@ -676,7 +676,7 @@
       "aviaryId": 3
     },
     {
-      "id": 46,
+      "id": "46",
       "name": "Max",
       "species": "Andulka",
       "variety": "Australská",
@@ -691,7 +691,7 @@
       "aviaryId": 1
     },
     {
-      "id": 47,
+      "id": "47",
       "name": "Zoro",
       "species": "Andulka",
       "variety": "Anglická",
@@ -706,7 +706,7 @@
       "aviaryId": 4
     },
     {
-      "id": 48,
+      "id": "48",
       "name": "Charlie",
       "species": "Andulka",
       "variety": "Anglická",
@@ -721,7 +721,7 @@
       "aviaryId": 2
     },
     {
-      "id": 49,
+      "id": "49",
       "name": "Nina",
       "species": "Andulka",
       "variety": "Australská",
@@ -736,7 +736,7 @@
       "aviaryId": 2
     },
     {
-      "id": 50,
+      "id": "50",
       "name": "Bobo",
       "species": "Andulka",
       "variety": "Anglická",
@@ -751,7 +751,7 @@
       "aviaryId": 3
     },
     {
-      "id": 51,
+      "id": "51",
       "name": "Sunny",
       "species": "Andulka",
       "variety": "Anglická",
@@ -766,7 +766,7 @@
       "aviaryId": 3
     },
     {
-      "id": 52,
+      "id": "52",
       "name": "Zoro",
       "species": "Andulka",
       "variety": "Anglická",
@@ -781,7 +781,7 @@
       "aviaryId": 1
     },
     {
-      "id": 53,
+      "id": "53",
       "name": "Daisy",
       "species": "Andulka",
       "variety": "Australská",
@@ -796,7 +796,7 @@
       "aviaryId": 3
     },
     {
-      "id": 54,
+      "id": "54",
       "name": "Bella",
       "species": "Andulka",
       "variety": "Australská",
@@ -811,7 +811,7 @@
       "aviaryId": 2
     },
     {
-      "id": 55,
+      "id": "55",
       "name": "Nina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -826,7 +826,7 @@
       "aviaryId": 4
     },
     {
-      "id": 56,
+      "id": "56",
       "name": "Tina",
       "species": "Andulka",
       "variety": "Australská",
@@ -841,7 +841,7 @@
       "aviaryId": 1
     },
     {
-      "id": 57,
+      "id": "57",
       "name": "Coco",
       "species": "Andulka",
       "variety": "Anglická",
@@ -856,7 +856,7 @@
       "aviaryId": 2
     },
     {
-      "id": 58,
+      "id": "58",
       "name": "Riki",
       "species": "Andulka",
       "variety": "Anglická",
@@ -871,7 +871,7 @@
       "aviaryId": 2
     },
     {
-      "id": 59,
+      "id": "59",
       "name": "Nina",
       "species": "Andulka",
       "variety": "Anglická",
@@ -886,7 +886,7 @@
       "aviaryId": 3
     },
     {
-      "id": 60,
+      "id": "60",
       "name": "Leo",
       "species": "Andulka",
       "variety": "Anglická",
@@ -901,7 +901,7 @@
       "aviaryId": 4
     },
     {
-      "id": 61,
+      "id": "61",
       "name": "Bella",
       "species": "Korela",
       "variety": "Skořicová",
@@ -916,7 +916,7 @@
       "aviaryId": 7
     },
     {
-      "id": 62,
+      "id": "62",
       "name": "Coco",
       "species": "Korela",
       "variety": "Perlová",
@@ -931,7 +931,7 @@
       "aviaryId": 6
     },
     {
-      "id": 63,
+      "id": "63",
       "name": "Bobo",
       "species": "Korela",
       "variety": "Perlová",
@@ -946,7 +946,7 @@
       "aviaryId": 6
     },
     {
-      "id": 64,
+      "id": "64",
       "name": "Sunny",
       "species": "Korela",
       "variety": "Skořicová",
@@ -961,7 +961,7 @@
       "aviaryId": 5
     },
     {
-      "id": 65,
+      "id": "65",
       "name": "Bobo",
       "species": "Korela",
       "variety": "Lutino",
@@ -976,7 +976,7 @@
       "aviaryId": 6
     },
     {
-      "id": 66,
+      "id": "66",
       "name": "Lili",
       "species": "Korela",
       "variety": "Přírodní",
@@ -991,7 +991,7 @@
       "aviaryId": 6
     },
     {
-      "id": 67,
+      "id": "67",
       "name": "Rocky",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1006,7 +1006,7 @@
       "aviaryId": 5
     },
     {
-      "id": 68,
+      "id": "68",
       "name": "Riki",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1021,7 +1021,7 @@
       "aviaryId": 6
     },
     {
-      "id": 69,
+      "id": "69",
       "name": "Charlie",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1036,7 +1036,7 @@
       "aviaryId": 7
     },
     {
-      "id": 70,
+      "id": "70",
       "name": "Charlie",
       "species": "Korela",
       "variety": "Perlová",
@@ -1051,7 +1051,7 @@
       "aviaryId": 7
     },
     {
-      "id": 71,
+      "id": "71",
       "name": "Rio",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1066,7 +1066,7 @@
       "aviaryId": 5
     },
     {
-      "id": 72,
+      "id": "72",
       "name": "Max",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1081,7 +1081,7 @@
       "aviaryId": 6
     },
     {
-      "id": 73,
+      "id": "73",
       "name": "Tina",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1096,7 +1096,7 @@
       "aviaryId": 6
     },
     {
-      "id": 74,
+      "id": "74",
       "name": "Tina",
       "species": "Korela",
       "variety": "Lutino",
@@ -1111,7 +1111,7 @@
       "aviaryId": 7
     },
     {
-      "id": 75,
+      "id": "75",
       "name": "Sunny",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1126,7 +1126,7 @@
       "aviaryId": 7
     },
     {
-      "id": 76,
+      "id": "76",
       "name": "Coco",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1141,7 +1141,7 @@
       "aviaryId": 5
     },
     {
-      "id": 77,
+      "id": "77",
       "name": "Rocky",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1156,7 +1156,7 @@
       "aviaryId": 5
     },
     {
-      "id": 78,
+      "id": "78",
       "name": "Luna",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1171,7 +1171,7 @@
       "aviaryId": 5
     },
     {
-      "id": 79,
+      "id": "79",
       "name": "Maya",
       "species": "Korela",
       "variety": "Perlová",
@@ -1186,7 +1186,7 @@
       "aviaryId": 5
     },
     {
-      "id": 80,
+      "id": "80",
       "name": "Sunny",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1201,7 +1201,7 @@
       "aviaryId": 7
     },
     {
-      "id": 81,
+      "id": "81",
       "name": "Nina",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1216,7 +1216,7 @@
       "aviaryId": 7
     },
     {
-      "id": 82,
+      "id": "82",
       "name": "Kiki",
       "species": "Korela",
       "variety": "Lutino",
@@ -1231,7 +1231,7 @@
       "aviaryId": 5
     },
     {
-      "id": 83,
+      "id": "83",
       "name": "Tina",
       "species": "Korela",
       "variety": "Skořicová",
@@ -1246,7 +1246,7 @@
       "aviaryId": 7
     },
     {
-      "id": 84,
+      "id": "84",
       "name": "Rio",
       "species": "Korela",
       "variety": "Přírodní",
@@ -1261,7 +1261,7 @@
       "aviaryId": 7
     },
     {
-      "id": 85,
+      "id": "85",
       "name": "Kiki",
       "species": "Korela",
       "variety": "Perlová",
@@ -1276,7 +1276,7 @@
       "aviaryId": 5
     },
     {
-      "id": 86,
+      "id": "86",
       "name": "Tina",
       "species": "Rosela",
       "variety": "Pestrá",
@@ -1291,7 +1291,7 @@
       "aviaryId": 10
     },
     {
-      "id": 87,
+      "id": "87",
       "name": "Bella",
       "species": "Rosela",
       "variety": "Pennantova",
@@ -1306,7 +1306,7 @@
       "aviaryId": 10
     },
     {
-      "id": 88,
+      "id": "88",
       "name": "Daisy",
       "species": "Rosela",
       "variety": "Žlutolící",
@@ -1321,7 +1321,7 @@
       "aviaryId": 8
     },
     {
-      "id": 89,
+      "id": "89",
       "name": "Bella",
       "species": "Rosela",
       "variety": "Pennantova",
@@ -1336,7 +1336,7 @@
       "aviaryId": 9
     },
     {
-      "id": 90,
+      "id": "90",
       "name": "Maya",
       "species": "Rosela",
       "variety": "Pestrá",
@@ -1351,7 +1351,7 @@
       "aviaryId": 9
     },
     {
-      "id": 91,
+      "id": "91",
       "name": "Lili",
       "species": "Rosela",
       "variety": "Žlutolící",
@@ -1366,7 +1366,7 @@
       "aviaryId": 9
     },
     {
-      "id": 92,
+      "id": "92",
       "name": "Lili",
       "species": "Rosela",
       "variety": "Žlutolící",
@@ -1381,7 +1381,7 @@
       "aviaryId": 10
     },
     {
-      "id": 93,
+      "id": "93",
       "name": "Leo",
       "species": "Rosela",
       "variety": "Pestrá",
@@ -1396,7 +1396,7 @@
       "aviaryId": 10
     },
     {
-      "id": 94,
+      "id": "94",
       "name": "Riki",
       "species": "Rosela",
       "variety": "Pestrá",
@@ -1411,7 +1411,7 @@
       "aviaryId": 9
     },
     {
-      "id": 95,
+      "id": "95",
       "name": "Bella",
       "species": "Rosela",
       "variety": "Pennantova",
@@ -1426,7 +1426,7 @@
       "aviaryId": 8
     },
     {
-      "id": 96,
+      "id": "96",
       "name": "Rio",
       "species": "Rosela",
       "variety": "Pennantova",
@@ -1441,7 +1441,7 @@
       "aviaryId": 9
     },
     {
-      "id": 97,
+      "id": "97",
       "name": "Bobo",
       "species": "Rosela",
       "variety": "Pestrá",
@@ -1456,7 +1456,7 @@
       "aviaryId": 9
     },
     {
-      "id": 98,
+      "id": "98",
       "name": "Bobo",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1471,7 +1471,7 @@
       "aviaryId": 12
     },
     {
-      "id": 99,
+      "id": "99",
       "name": "Leo",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1486,7 +1486,7 @@
       "aviaryId": 12
     },
     {
-      "id": 100,
+      "id": "100",
       "name": "Rio",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1501,7 +1501,7 @@
       "aviaryId": 12
     },
     {
-      "id": 101,
+      "id": "101",
       "name": "Max",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1516,7 +1516,7 @@
       "aviaryId": 12
     },
     {
-      "id": 102,
+      "id": "102",
       "name": "Riki",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1531,7 +1531,7 @@
       "aviaryId": 11
     },
     {
-      "id": 103,
+      "id": "103",
       "name": "Rio",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1546,7 +1546,7 @@
       "aviaryId": 11
     },
     {
-      "id": 104,
+      "id": "104",
       "name": "Nina",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1561,7 +1561,7 @@
       "aviaryId": 12
     },
     {
-      "id": 105,
+      "id": "105",
       "name": "Coco",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1576,7 +1576,7 @@
       "aviaryId": 12
     },
     {
-      "id": 106,
+      "id": "106",
       "name": "Rocky",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1591,7 +1591,7 @@
       "aviaryId": 12
     },
     {
-      "id": 107,
+      "id": "107",
       "name": "Nina",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1606,7 +1606,7 @@
       "aviaryId": 12
     },
     {
-      "id": 108,
+      "id": "108",
       "name": "Lili",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1621,7 +1621,7 @@
       "aviaryId": 12
     },
     {
-      "id": 109,
+      "id": "109",
       "name": "Kiki",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1636,7 +1636,7 @@
       "aviaryId": 11
     },
     {
-      "id": 110,
+      "id": "110",
       "name": "Max",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1651,7 +1651,7 @@
       "aviaryId": 11
     },
     {
-      "id": 111,
+      "id": "111",
       "name": "Lili",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1666,7 +1666,7 @@
       "aviaryId": 12
     },
     {
-      "id": 112,
+      "id": "112",
       "name": "Tina",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1681,7 +1681,7 @@
       "aviaryId": 12
     },
     {
-      "id": 113,
+      "id": "113",
       "name": "Nina",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1696,7 +1696,7 @@
       "aviaryId": 11
     },
     {
-      "id": 114,
+      "id": "114",
       "name": "Daisy",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1711,7 +1711,7 @@
       "aviaryId": 12
     },
     {
-      "id": 115,
+      "id": "115",
       "name": "Bella",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1726,7 +1726,7 @@
       "aviaryId": 12
     },
     {
-      "id": 116,
+      "id": "116",
       "name": "Sunny",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1741,7 +1741,7 @@
       "aviaryId": 12
     },
     {
-      "id": 117,
+      "id": "117",
       "name": "Lili",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1756,7 +1756,7 @@
       "aviaryId": 12
     },
     {
-      "id": 118,
+      "id": "118",
       "name": "Rocky",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1771,7 +1771,7 @@
       "aviaryId": 11
     },
     {
-      "id": 119,
+      "id": "119",
       "name": "Tina",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1786,7 +1786,7 @@
       "aviaryId": 12
     },
     {
-      "id": 120,
+      "id": "120",
       "name": "Bobo",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1801,7 +1801,7 @@
       "aviaryId": 12
     },
     {
-      "id": 121,
+      "id": "121",
       "name": "Rocky",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1816,7 +1816,7 @@
       "aviaryId": 11
     },
     {
-      "id": 122,
+      "id": "122",
       "name": "Max",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1831,7 +1831,7 @@
       "aviaryId": 11
     },
     {
-      "id": 123,
+      "id": "123",
       "name": "Bella",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1846,7 +1846,7 @@
       "aviaryId": 11
     },
     {
-      "id": 124,
+      "id": "124",
       "name": "Luna",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1861,7 +1861,7 @@
       "aviaryId": 11
     },
     {
-      "id": 125,
+      "id": "125",
       "name": "Bella",
       "species": "Kanár",
       "variety": "Barevný",
@@ -1876,7 +1876,7 @@
       "aviaryId": 11
     },
     {
-      "id": 126,
+      "id": "126",
       "name": "Charlie",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1891,7 +1891,7 @@
       "aviaryId": 11
     },
     {
-      "id": 127,
+      "id": "127",
       "name": "Rio",
       "species": "Kanár",
       "variety": "Zpěvný",
@@ -1908,7 +1908,7 @@
   ],
   "pairs": [
     {
-      "id": 1,
+      "id": "1",
       "maleBirdId": 5,
       "femaleBirdId": 1,
       "active": true,
@@ -1917,7 +1917,7 @@
       "notes": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "maleBirdId": 6,
       "femaleBirdId": 2,
       "active": true,
@@ -1926,7 +1926,7 @@
       "notes": ""
     },
     {
-      "id": 3,
+      "id": "3",
       "maleBirdId": 7,
       "femaleBirdId": 3,
       "active": true,
@@ -1935,7 +1935,7 @@
       "notes": ""
     },
     {
-      "id": 4,
+      "id": "4",
       "maleBirdId": 9,
       "femaleBirdId": 4,
       "active": true,
@@ -1944,7 +1944,7 @@
       "notes": ""
     },
     {
-      "id": 5,
+      "id": "5",
       "maleBirdId": 13,
       "femaleBirdId": 8,
       "active": true,
@@ -1953,7 +1953,7 @@
       "notes": ""
     },
     {
-      "id": 6,
+      "id": "6",
       "maleBirdId": 14,
       "femaleBirdId": 10,
       "active": true,
@@ -1962,7 +1962,7 @@
       "notes": ""
     },
     {
-      "id": 7,
+      "id": "7",
       "maleBirdId": 15,
       "femaleBirdId": 11,
       "active": true,
@@ -1971,7 +1971,7 @@
       "notes": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "maleBirdId": 18,
       "femaleBirdId": 12,
       "active": true,
@@ -1980,7 +1980,7 @@
       "notes": ""
     },
     {
-      "id": 9,
+      "id": "9",
       "maleBirdId": 20,
       "femaleBirdId": 16,
       "active": true,
@@ -1989,7 +1989,7 @@
       "notes": ""
     },
     {
-      "id": 10,
+      "id": "10",
       "maleBirdId": 23,
       "femaleBirdId": 17,
       "active": true,
@@ -1998,7 +1998,7 @@
       "notes": ""
     },
     {
-      "id": 11,
+      "id": "11",
       "maleBirdId": 61,
       "femaleBirdId": 67,
       "active": true,
@@ -2007,7 +2007,7 @@
       "notes": ""
     },
     {
-      "id": 12,
+      "id": "12",
       "maleBirdId": 62,
       "femaleBirdId": 68,
       "active": true,
@@ -2016,7 +2016,7 @@
       "notes": ""
     },
     {
-      "id": 13,
+      "id": "13",
       "maleBirdId": 63,
       "femaleBirdId": 75,
       "active": true,
@@ -2025,7 +2025,7 @@
       "notes": ""
     },
     {
-      "id": 14,
+      "id": "14",
       "maleBirdId": 64,
       "femaleBirdId": 79,
       "active": true,
@@ -2034,7 +2034,7 @@
       "notes": ""
     },
     {
-      "id": 15,
+      "id": "15",
       "maleBirdId": 65,
       "femaleBirdId": 80,
       "active": true,
@@ -2043,7 +2043,7 @@
       "notes": ""
     },
     {
-      "id": 16,
+      "id": "16",
       "maleBirdId": 66,
       "femaleBirdId": 83,
       "active": true,
@@ -2052,7 +2052,7 @@
       "notes": ""
     },
     {
-      "id": 17,
+      "id": "17",
       "maleBirdId": 69,
       "femaleBirdId": 84,
       "active": true,
@@ -2061,7 +2061,7 @@
       "notes": ""
     },
     {
-      "id": 18,
+      "id": "18",
       "maleBirdId": 70,
       "femaleBirdId": 85,
       "active": true,
@@ -2070,7 +2070,7 @@
       "notes": ""
     },
     {
-      "id": 19,
+      "id": "19",
       "maleBirdId": 86,
       "femaleBirdId": 88,
       "active": true,
@@ -2079,7 +2079,7 @@
       "notes": ""
     },
     {
-      "id": 20,
+      "id": "20",
       "maleBirdId": 87,
       "femaleBirdId": 90,
       "active": true,
@@ -2088,7 +2088,7 @@
       "notes": ""
     },
     {
-      "id": 21,
+      "id": "21",
       "maleBirdId": 89,
       "femaleBirdId": 91,
       "active": true,
@@ -2097,7 +2097,7 @@
       "notes": ""
     },
     {
-      "id": 22,
+      "id": "22",
       "maleBirdId": 92,
       "femaleBirdId": 95,
       "active": true,
@@ -2106,7 +2106,7 @@
       "notes": ""
     },
     {
-      "id": 23,
+      "id": "23",
       "maleBirdId": 93,
       "femaleBirdId": 97,
       "active": true,
@@ -2115,7 +2115,7 @@
       "notes": ""
     },
     {
-      "id": 24,
+      "id": "24",
       "maleBirdId": 98,
       "femaleBirdId": 99,
       "active": true,
@@ -2124,7 +2124,7 @@
       "notes": ""
     },
     {
-      "id": 25,
+      "id": "25",
       "maleBirdId": 101,
       "femaleBirdId": 100,
       "active": true,
@@ -2133,7 +2133,7 @@
       "notes": ""
     },
     {
-      "id": 26,
+      "id": "26",
       "maleBirdId": 102,
       "femaleBirdId": 103,
       "active": true,
@@ -2142,7 +2142,7 @@
       "notes": ""
     },
     {
-      "id": 27,
+      "id": "27",
       "maleBirdId": 105,
       "femaleBirdId": 104,
       "active": true,
@@ -2151,7 +2151,7 @@
       "notes": ""
     },
     {
-      "id": 28,
+      "id": "28",
       "maleBirdId": 109,
       "femaleBirdId": 106,
       "active": true,
@@ -2160,7 +2160,7 @@
       "notes": ""
     },
     {
-      "id": 29,
+      "id": "29",
       "maleBirdId": 112,
       "femaleBirdId": 107,
       "active": true,
@@ -2169,7 +2169,7 @@
       "notes": ""
     },
     {
-      "id": 30,
+      "id": "30",
       "maleBirdId": 116,
       "femaleBirdId": 108,
       "active": true,
@@ -2178,7 +2178,7 @@
       "notes": ""
     },
     {
-      "id": 31,
+      "id": "31",
       "maleBirdId": 120,
       "femaleBirdId": 110,
       "active": true,
@@ -2187,7 +2187,7 @@
       "notes": ""
     },
     {
-      "id": 32,
+      "id": "32",
       "maleBirdId": 121,
       "femaleBirdId": 111,
       "active": true,
@@ -2196,7 +2196,7 @@
       "notes": ""
     },
     {
-      "id": 33,
+      "id": "33",
       "maleBirdId": 122,
       "femaleBirdId": 113,
       "active": true,
@@ -2207,7 +2207,7 @@
   ],
   "aviaries": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Voliéra 1",
       "type": "Venkovní",
       "location": "Sekce 1",
@@ -2216,7 +2216,7 @@
       "temperatureNotes": "Chránit před větrem"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Voliéra 2",
       "type": "Venkovní",
       "location": "Sekce 2",
@@ -2225,7 +2225,7 @@
       "temperatureNotes": "Ranní slunce"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Voliéra 3",
       "type": "Venkovní",
       "location": "Sekce 3",
@@ -2234,7 +2234,7 @@
       "temperatureNotes": "Polostín"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Voliéra 4",
       "type": "Venkovní",
       "location": "Sekce 4",
@@ -2243,7 +2243,7 @@
       "temperatureNotes": "Teplejší zóna"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Voliéra 5",
       "type": "Venkovní",
       "location": "Sekce 5",
@@ -2252,7 +2252,7 @@
       "temperatureNotes": "Vhodná pro korely"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Voliéra 6",
       "type": "Venkovní",
       "location": "Sekce 6",
@@ -2261,7 +2261,7 @@
       "temperatureNotes": "Přístřešek proti dešti"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Voliéra 7",
       "type": "Venkovní",
       "location": "Sekce 7",
@@ -2270,7 +2270,7 @@
       "temperatureNotes": "Dobré proudění vzduchu"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Voliéra 8",
       "type": "Venkovní",
       "location": "Sekce 8",
@@ -2279,7 +2279,7 @@
       "temperatureNotes": "Pro rosely, více prostoru"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Voliéra 9",
       "type": "Venkovní",
       "location": "Sekce 9",
@@ -2288,7 +2288,7 @@
       "temperatureNotes": "Klidnější část zahrady"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Voliéra 10",
       "type": "Venkovní",
       "location": "Sekce 10",
@@ -2297,7 +2297,7 @@
       "temperatureNotes": "Více stínu odpoledne"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Voliéra 11",
       "type": "Vnitřní",
       "location": "Sekce 11",
@@ -2306,7 +2306,7 @@
       "temperatureNotes": "Stabilně 18 až 22 C"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Voliéra 12",
       "type": "Vnitřní",
       "location": "Sekce 12",
@@ -2315,7 +2315,7 @@
       "temperatureNotes": "Vyhřívaná přes zimu"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Sklepní klec 1",
       "type": "Sklep",
       "location": "Sklep",
@@ -2324,7 +2324,7 @@
       "temperatureNotes": "Chladnější, 12 až 16 C"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Sklepní klec 2",
       "type": "Sklep",
       "location": "Sklep",
@@ -2333,7 +2333,7 @@
       "temperatureNotes": "Klid na karanténu"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "Sklepní klec 3",
       "type": "Sklep",
       "location": "Sklep",
@@ -2342,7 +2342,7 @@
       "temperatureNotes": "Méně světla"
     },
     {
-      "id": 16,
+      "id": "16",
       "name": "Sklepní klec 4",
       "type": "Sklep",
       "location": "Sklep",
@@ -2351,7 +2351,7 @@
       "temperatureNotes": "Stabilní klima"
     },
     {
-      "id": 17,
+      "id": "17",
       "name": "Sklepní klec 5",
       "type": "Sklep",
       "location": "Sklep",
@@ -2362,7 +2362,7 @@
   ],
   "breedingRecords": [
     {
-      "id": 1,
+      "id": "1",
       "pairId": 1,
       "eggsLaid": 6,
       "fertileEggs": 2,
@@ -2374,7 +2374,7 @@
       "notes": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "pairId": 2,
       "eggsLaid": 7,
       "fertileEggs": 4,
@@ -2386,7 +2386,7 @@
       "notes": ""
     },
     {
-      "id": 3,
+      "id": "3",
       "pairId": 3,
       "eggsLaid": 5,
       "fertileEggs": 2,
@@ -2398,7 +2398,7 @@
       "notes": ""
     },
     {
-      "id": 4,
+      "id": "4",
       "pairId": 4,
       "eggsLaid": 3,
       "fertileEggs": 5,
@@ -2410,7 +2410,7 @@
       "notes": ""
     },
     {
-      "id": 5,
+      "id": "5",
       "pairId": 5,
       "eggsLaid": 6,
       "fertileEggs": 3,
@@ -2422,7 +2422,7 @@
       "notes": ""
     },
     {
-      "id": 6,
+      "id": "6",
       "pairId": 6,
       "eggsLaid": 4,
       "fertileEggs": 4,
@@ -2434,7 +2434,7 @@
       "notes": ""
     },
     {
-      "id": 7,
+      "id": "7",
       "pairId": 7,
       "eggsLaid": 3,
       "fertileEggs": 3,
@@ -2446,7 +2446,7 @@
       "notes": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "pairId": 8,
       "eggsLaid": 7,
       "fertileEggs": 4,
@@ -2458,7 +2458,7 @@
       "notes": ""
     },
     {
-      "id": 9,
+      "id": "9",
       "pairId": 9,
       "eggsLaid": 4,
       "fertileEggs": 3,
@@ -2470,7 +2470,7 @@
       "notes": ""
     },
     {
-      "id": 10,
+      "id": "10",
       "pairId": 10,
       "eggsLaid": 4,
       "fertileEggs": 3,
@@ -2482,7 +2482,7 @@
       "notes": ""
     },
     {
-      "id": 11,
+      "id": "11",
       "pairId": 11,
       "eggsLaid": 4,
       "fertileEggs": 4,
@@ -2494,7 +2494,7 @@
       "notes": ""
     },
     {
-      "id": 12,
+      "id": "12",
       "pairId": 12,
       "eggsLaid": 6,
       "fertileEggs": 2,
@@ -2506,7 +2506,7 @@
       "notes": ""
     },
     {
-      "id": 13,
+      "id": "13",
       "pairId": 13,
       "eggsLaid": 4,
       "fertileEggs": 3,
@@ -2518,7 +2518,7 @@
       "notes": ""
     },
     {
-      "id": 14,
+      "id": "14",
       "pairId": 14,
       "eggsLaid": 7,
       "fertileEggs": 3,
@@ -2530,7 +2530,7 @@
       "notes": ""
     },
     {
-      "id": 15,
+      "id": "15",
       "pairId": 15,
       "eggsLaid": 6,
       "fertileEggs": 4,
@@ -2542,7 +2542,7 @@
       "notes": ""
     },
     {
-      "id": 16,
+      "id": "16",
       "pairId": 16,
       "eggsLaid": 6,
       "fertileEggs": 2,
@@ -2554,7 +2554,7 @@
       "notes": ""
     },
     {
-      "id": 17,
+      "id": "17",
       "pairId": 17,
       "eggsLaid": 5,
       "fertileEggs": 2,
@@ -2566,7 +2566,7 @@
       "notes": ""
     },
     {
-      "id": 18,
+      "id": "18",
       "pairId": 18,
       "eggsLaid": 5,
       "fertileEggs": 3,
@@ -2578,7 +2578,7 @@
       "notes": ""
     },
     {
-      "id": 19,
+      "id": "19",
       "pairId": 19,
       "eggsLaid": 4,
       "fertileEggs": 2,
@@ -2590,7 +2590,7 @@
       "notes": ""
     },
     {
-      "id": 20,
+      "id": "20",
       "pairId": 20,
       "eggsLaid": 7,
       "fertileEggs": 3,
@@ -2602,7 +2602,7 @@
       "notes": ""
     },
     {
-      "id": 21,
+      "id": "21",
       "pairId": 21,
       "eggsLaid": 4,
       "fertileEggs": 5,
@@ -2614,7 +2614,7 @@
       "notes": ""
     },
     {
-      "id": 22,
+      "id": "22",
       "pairId": 22,
       "eggsLaid": 6,
       "fertileEggs": 3,
@@ -2626,7 +2626,7 @@
       "notes": ""
     },
     {
-      "id": 23,
+      "id": "23",
       "pairId": 23,
       "eggsLaid": 3,
       "fertileEggs": 3,
@@ -2638,7 +2638,7 @@
       "notes": ""
     },
     {
-      "id": 24,
+      "id": "24",
       "pairId": 24,
       "eggsLaid": 5,
       "fertileEggs": 5,
@@ -2650,7 +2650,7 @@
       "notes": ""
     },
     {
-      "id": 25,
+      "id": "25",
       "pairId": 25,
       "eggsLaid": 3,
       "fertileEggs": 4,
@@ -2662,7 +2662,7 @@
       "notes": ""
     },
     {
-      "id": 26,
+      "id": "26",
       "pairId": 26,
       "eggsLaid": 5,
       "fertileEggs": 4,
@@ -2674,7 +2674,7 @@
       "notes": ""
     },
     {
-      "id": 27,
+      "id": "27",
       "pairId": 27,
       "eggsLaid": 7,
       "fertileEggs": 2,
@@ -2686,7 +2686,7 @@
       "notes": ""
     },
     {
-      "id": 28,
+      "id": "28",
       "pairId": 28,
       "eggsLaid": 4,
       "fertileEggs": 2,
@@ -2698,7 +2698,7 @@
       "notes": ""
     },
     {
-      "id": 29,
+      "id": "29",
       "pairId": 29,
       "eggsLaid": 7,
       "fertileEggs": 2,
@@ -2710,7 +2710,7 @@
       "notes": ""
     },
     {
-      "id": 30,
+      "id": "30",
       "pairId": 30,
       "eggsLaid": 7,
       "fertileEggs": 2,
@@ -2722,7 +2722,7 @@
       "notes": ""
     },
     {
-      "id": 31,
+      "id": "31",
       "pairId": 31,
       "eggsLaid": 7,
       "fertileEggs": 3,
@@ -2734,7 +2734,7 @@
       "notes": ""
     },
     {
-      "id": 32,
+      "id": "32",
       "pairId": 32,
       "eggsLaid": 5,
       "fertileEggs": 2,
@@ -2746,7 +2746,7 @@
       "notes": ""
     },
     {
-      "id": 33,
+      "id": "33",
       "pairId": 33,
       "eggsLaid": 3,
       "fertileEggs": 5,
@@ -2760,7 +2760,7 @@
   ],
   "feedingLogs": [
     {
-      "id": 1,
+      "id": "1",
       "aviaryId": 1,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2769,7 +2769,7 @@
       "notes": ""
     },
     {
-      "id": 2,
+      "id": "2",
       "aviaryId": 2,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2778,7 +2778,7 @@
       "notes": ""
     },
     {
-      "id": 3,
+      "id": "3",
       "aviaryId": 3,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2787,7 +2787,7 @@
       "notes": ""
     },
     {
-      "id": 4,
+      "id": "4",
       "aviaryId": 4,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2796,7 +2796,7 @@
       "notes": ""
     },
     {
-      "id": 5,
+      "id": "5",
       "aviaryId": 5,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2805,7 +2805,7 @@
       "notes": ""
     },
     {
-      "id": 6,
+      "id": "6",
       "aviaryId": 6,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2814,7 +2814,7 @@
       "notes": ""
     },
     {
-      "id": 7,
+      "id": "7",
       "aviaryId": 7,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2823,7 +2823,7 @@
       "notes": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "aviaryId": 8,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2832,7 +2832,7 @@
       "notes": ""
     },
     {
-      "id": 9,
+      "id": "9",
       "aviaryId": 9,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2841,7 +2841,7 @@
       "notes": ""
     },
     {
-      "id": 10,
+      "id": "10",
       "aviaryId": 10,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2850,7 +2850,7 @@
       "notes": ""
     },
     {
-      "id": 11,
+      "id": "11",
       "aviaryId": 11,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2859,7 +2859,7 @@
       "notes": ""
     },
     {
-      "id": 12,
+      "id": "12",
       "aviaryId": 12,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2868,7 +2868,7 @@
       "notes": ""
     },
     {
-      "id": 13,
+      "id": "13",
       "aviaryId": 13,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2877,7 +2877,7 @@
       "notes": ""
     },
     {
-      "id": 14,
+      "id": "14",
       "aviaryId": 14,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2886,7 +2886,7 @@
       "notes": ""
     },
     {
-      "id": 15,
+      "id": "15",
       "aviaryId": 15,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2895,7 +2895,7 @@
       "notes": ""
     },
     {
-      "id": 16,
+      "id": "16",
       "aviaryId": 16,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2904,7 +2904,7 @@
       "notes": ""
     },
     {
-      "id": 17,
+      "id": "17",
       "aviaryId": 17,
       "foodType": "Směs semen",
       "supplements": "Vitamíny",
@@ -2913,6 +2913,107 @@
       "notes": ""
     }
   ],
-  "healthRecords": [],
+  "healthRecords": [
+    {
+      "id": "hr1",
+      "birdId": 4,
+      "type": "Kontrola",
+      "date": "2026-04-12",
+      "description": "Pravidelná kontrola zdravotního stavu",
+      "medications": "",
+      "vetName": "MVDr. Novák",
+      "notes": "Bez problémů"
+    },
+    {
+      "id": "hr2",
+      "birdId": 15,
+      "type": "Léčba",
+      "date": "2026-03-28",
+      "description": "Respirační potíže",
+      "medications": "Enrofloxacin",
+      "vetName": "MVDr. Svoboda",
+      "notes": "Zlepšení po 5 dnech"
+    },
+    {
+      "id": "hr3",
+      "birdId": 61,
+      "type": "Odčervení",
+      "date": "2026-02-14",
+      "description": "Preventivní odčervení",
+      "medications": "Ivermectin",
+      "vetName": "MVDr. Novák",
+      "notes": ""
+    },
+    {
+      "id": "hr4",
+      "birdId": 72,
+      "type": "Zranění",
+      "date": "2026-01-07",
+      "description": "Poranění křídla po konfliktu ve voliéře",
+      "medications": "Dezinfekce",
+      "vetName": "MVDr. Dvořák",
+      "notes": "Oddělen do karantény"
+    },
+    {
+      "id": "hr5",
+      "birdId": 89,
+      "type": "Kontrola",
+      "date": "2025-12-19",
+      "description": "Kontrola před chovnou sezónou",
+      "medications": "",
+      "vetName": "MVDr. Svoboda",
+      "notes": "Výborná kondice"
+    },
+    {
+      "id": "hr6",
+      "birdId": 98,
+      "type": "Vitaminizace",
+      "date": "2026-05-01",
+      "description": "Doplnění vitamínu A a D3",
+      "medications": "Vitamínový doplněk",
+      "vetName": "",
+      "notes": ""
+    },
+    {
+      "id": "hr7",
+      "birdId": 120,
+      "type": "Léčba",
+      "date": "2025-11-03",
+      "description": "Průjem a ztráta hmotnosti",
+      "medications": "Probiotika",
+      "vetName": "MVDr. Novák",
+      "notes": "Stav stabilizován"
+    },
+    {
+      "id": "hr8",
+      "birdId": 33,
+      "type": "Karanténa",
+      "date": "2026-04-22",
+      "description": "Nově zařazen do chovu",
+      "medications": "",
+      "vetName": "",
+      "notes": "14 dní bez příznaků"
+    },
+    {
+      "id": "hr9",
+      "birdId": 47,
+      "type": "Kontrola",
+      "date": "2026-03-09",
+      "description": "Kontrola opeření",
+      "medications": "",
+      "vetName": "MVDr. Dvořák",
+      "notes": "Lehké pelichání"
+    },
+    {
+      "id": "hr10",
+      "birdId": 105,
+      "type": "Léčba",
+      "date": "2026-02-01",
+      "description": "Zánět oka",
+      "medications": "Oční kapky",
+      "vetName": "MVDr. Svoboda",
+      "notes": "Kontrola za týden"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <div>
         <h1 class="text-2xl font-bold text-gray-900">{{ $t("breeding.breedingRecords") }}</h1>
-        <p class="text-base text-slate-600 mt-0.5">{{ breedingRecords.length }} záznamů</p>
+        <p class="text-base text-slate-600 mt-0.5">{{ breedingRecords.length }} {{ $t('common.records') }}</p>
       </div>
       <Button icon="pi pi-plus" :label="$t('breeding.addRecord')" @click="openAddDialog" />
     </div>
@@ -23,8 +23,8 @@
       <DataTable :value="breedingRecords" :loading="loading" paginator :rows="15" dataKey="id" stripedRows removableSort
         class="p-datatable-sm">
         <template #empty>
-          <EmptyState icon="pi pi-chart-line" title="Žádné chovné záznamy"
-            description="Přidejte první chovný záznam pomocí tlačítka výše." />
+          <EmptyState icon="pi pi-chart-line" :title="$t('breeding.noRecords')"
+            :description="$t('breeding.noRecordsDescription')" />
         </template>
         <Column :header="$t('breeding.pair')" sortable>
           <template #body="{ data }">
@@ -55,7 +55,7 @@
         <Column field="breedingCycleEnd" :header="$t('breeding.endDate')">
           <template #body="{ data }">
             <span v-if="data.breedingCycleEnd">{{ formatDate(data.breedingCycleEnd) }}</span>
-            <StatusBadge v-else variant="amber" label="Probíhá" />
+            <StatusBadge v-else variant="amber" :label="$t('breeding.inProgress')" />
           </template>
         </Column>
         <Column :header="$t('common.actions')" style="width:100px">
@@ -77,11 +77,11 @@
       <div v-if="selectedRecord" class="space-y-4">
         <div class="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Pár</p>
+            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('breeding.pair') }}</p>
             <p class="font-semibold text-gray-900">{{ getPairLabel(selectedRecord.pairId) }}</p>
           </div>
           <div>
-            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">Úspěšnost</p>
+            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">{{ $t('breeding.successRate') }}</p>
             <StatusBadge :variant="calcSuccessRate(selectedRecord) >= 70 ? 'green' : 'amber'"
               :label="`${calcSuccessRate(selectedRecord)}%`" />
           </div>
@@ -89,34 +89,34 @@
         <div class="grid grid-cols-4 gap-2">
           <div class="text-center p-3 bg-blue-50 rounded-lg">
             <p class="text-xl font-bold text-blue-600">{{ selectedRecord.eggsLaid }}</p>
-            <p class="text-sm text-slate-600">Vajec</p>
+            <p class="text-sm text-slate-600">{{ $t('breeding.eggs') }}</p>
           </div>
           <div class="text-center p-3 bg-emerald-50 rounded-lg">
             <p class="text-xl font-bold text-emerald-600">{{ selectedRecord.hatchedChicks }}</p>
-            <p class="text-sm text-slate-600">Vylíhnuto</p>
+            <p class="text-sm text-slate-600">{{ $t('breeding.hatchedChicks') }}</p>
           </div>
           <div class="text-center p-3 bg-purple-50 rounded-lg">
             <p class="text-xl font-bold text-purple-600">{{ selectedRecord.survivedChicks }}</p>
-            <p class="text-sm text-slate-600">Přeživší</p>
+            <p class="text-sm text-slate-600">{{ $t('breeding.survivedChicks') }}</p>
           </div>
           <div class="text-center p-3 bg-red-50 rounded-lg">
             <p class="text-xl font-bold text-red-600">{{ selectedRecord.deadChicks }}</p>
-            <p class="text-sm text-slate-600">Uhynulí</p>
+            <p class="text-sm text-slate-600">{{ $t('breeding.deadChicks') }}</p>
           </div>
         </div>
         <div class="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Začátek cyklu</p>
+            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('breeding.startDate') }}</p>
             <p class="text-base text-slate-700">{{ formatDate(selectedRecord.breedingCycleStart) }}</p>
           </div>
           <div>
-            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Konec cyklu</p>
+            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('breeding.endDate') }}</p>
             <p class="text-base text-slate-700">{{ selectedRecord.breedingCycleEnd ?
-              formatDate(selectedRecord.breedingCycleEnd) : "Probíhá" }}</p>
+              formatDate(selectedRecord.breedingCycleEnd) : $t('breeding.inProgress') }}</p>
           </div>
         </div>
         <div v-if="selectedRecord.notes" class="bg-slate-50 rounded-lg p-3">
-          <p class="text-sm text-slate-500 uppercase tracking-wide mb-1">Poznámky</p>
+          <p class="text-sm text-slate-500 uppercase tracking-wide mb-1">{{ $t('breeding.notes') }}</p>
           <p class="text-base text-slate-700">{{ selectedRecord.notes }}</p>
         </div>
       </div>
@@ -129,8 +129,8 @@
       <form @submit.prevent="saveRecord" class="form-shell">
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Par a cyklus</h3>
-            <p class="form-section-description">Vyberte par a nastavte casovy ramec zaznamu.</p>
+            <h3 class="form-section-title">{{ $t('breeding.pairAndCycle') }}</h3>
+            <p class="form-section-description">{{ $t('breeding.pairAndCycleDescription') }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
@@ -144,7 +144,7 @@
                 <InputNumber v-model="recordForm.eggsLaid" :min="0" class="w-full" />
               </div>
               <div class="form-field">
-                <label class="form-label">Plodná vejce</label>
+                <label class="form-label">{{ $t("breeding.fertileEggs") }}</label>
                 <InputNumber v-model="recordForm.fertileEggs" :min="0" class="w-full" />
               </div>
             </div>
@@ -162,8 +162,8 @@
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Vysledky hnizdeni</h3>
-            <p class="form-section-description">Zadejte pocet mladych v jednotlivych fazich.</p>
+            <h3 class="form-section-title">{{ $t('breeding.results') }}</h3>
+            <p class="form-section-description">{{ $t('breeding.resultsDescription') }}</p>
           </div>
           <div class="form-grid form-grid--3">
             <div class="form-field">
@@ -175,15 +175,15 @@
               <InputNumber v-model="recordForm.survivedChicks" :min="0" class="w-full" />
             </div>
             <div class="form-field">
-              <label class="form-label">Uhynulí</label>
+              <label class="form-label">{{ $t("breeding.deadChicks") }}</label>
               <InputNumber v-model="recordForm.deadChicks" :min="0" class="w-full" />
             </div>
           </div>
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Poznamky</h3>
-            <p class="form-section-description">Prostor pro komplikace, pozorovani nebo dalsi detail.</p>
+            <h3 class="form-section-title">{{ $t('breeding.notes') }}</h3>
+            <p class="form-section-description">{{ $t('breeding.notesDescription') }}</p>
           </div>
           <div class="form-field">
             <label class="form-label">{{ $t("common.notes") }}</label>
@@ -197,7 +197,7 @@
       </form>
     </Dialog>
 
-    <DeleteConfirmDialog v-model="showDeleteDialog" title="Smazat chovný záznam?"
+    <DeleteConfirmDialog v-model="showDeleteDialog" :title="$t('breeding.confirmDelete')"
       :message="$t('messages.confirmDelete')" :loading="deleting" @confirm="doDeleteRecord" />
   </div>
 </template>
@@ -246,15 +246,21 @@ const recordForm = ref(defaultForm())
 // Pairs with human-readable labels (pairs have no name field — bug fix!)
 const pairsWithLabel = computed(() =>
   pairs.value.map((p) => {
-    const male = birds.value.find((b) => b.id === p.maleBirdId || b.id === +p.maleBirdId)
-    const female = birds.value.find((b) => b.id === p.femaleBirdId || b.id === +p.femaleBirdId)
-    return { ...p, label: `${male?.name || "?"} × ${female?.name || "?"}` }
+    const male = birds.value.find((b) => b.id == p.maleBirdId || b.id == +p.maleBirdId)
+    const female = birds.value.find((b) => b.id == p.femaleBirdId || b.id == +p.femaleBirdId)
+    //console.log(male, female);
+    return { ...p, label: `${male?.ringNumber || "?"} x ${female?.ringNumber || "?"}` } //potřeba zjistit co je lepší jestli kroužky nebo jak?...
   })
 )
 
 const getPairLabel = (pairId) => {
-  const pl = pairsWithLabel.value.find((p) => p.id === pairId || p.id === +pairId)
-  return pl ? pl.label : `Pár ${pairId}`
+  const pl = pairsWithLabel.value.find(
+    (p) => p.id === pairId || p.id === +pairId
+  )
+
+  return pl
+    ? pl.label
+    : t("breeding.pairFallback", { id: pairId })
 }
 
 const averageSuccessRate = computed(() => {

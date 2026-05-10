@@ -2,6 +2,10 @@
 
 Webová aplikace pro správu ptačích voliér, chovných párů, zdravotních záznamů a krmení. Projekt zároveň slouží jako základní skeleton pro bakalářskou práci a počítá s dalším rozšiřováním funkcí i vizuální vrstvy. Postavena na Vue 3, PrimeVue v4 a TailwindCSS v4.
 
+> ⚠️ **Poznámka:**  
+> Aplikace aktuálně používá pouze generovaná a ručně vytvořená testovací data (`db.json`).  
+> Datový model, statistiky i záznamy zatím nebyly ověřeny v reálném provozu chovu a slouží hlavně pro návrh struktury aplikace, UI a budoucí rozšíření projektu.
+
 ---
 
 ## ✨ Co aplikace umí
@@ -34,16 +38,16 @@ Počítám také s tím, že by aplikace měla jednou fungovat co nejvíc jednod
 
 ## 🛠 Použité technologie
 
-| Vrstva | Technologie |
-|--------|-------------|
+| Vrstva             | Technologie                               |
+| ------------------ | ----------------------------------------- |
 | Frontend framework | Vue 3 (Composition API, `<script setup>`) |
-| UI komponenty | PrimeVue v4 s Aura předvolbou |
-| CSS framework | TailwindCSS v4 |
-| Směrování | Vue Router 4 |
-| Překlady | Vue I18n v9 |
-| HTTP klient | Axios |
-| Backend / mock API | JSON Server |
-| Sestavení projektu | Vite |
+| UI komponenty      | PrimeVue v4 s Aura předvolbou             |
+| CSS framework      | TailwindCSS v4                            |
+| Směrování          | Vue Router 4                              |
+| Překlady           | Vue I18n v9                               |
+| HTTP klient        | Axios                                     |
+| Backend / mock API | JSON Server                               |
+| Sestavení projektu | Vite                                      |
 
 ---
 
@@ -95,107 +99,118 @@ Aplikace používá JSON Server jako simulovaný REST backend. Databáze (`db.js
 ![Databázový diagram aplikace Nest](./src/assets/nest-database-diagram.png)
 
 ### `birds` - ptáci
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| name | string | Jméno ptáka |
-| species | string | Druh, např. „Andulka", „Korela", „Rosela", „Kanár" |
-| variety | string | Odrůda specifická pro daný druh |
-| mutation | string | Barevná mutace |
-| gender | string | „samec" / „samice" / „neznámé" |
-| status | string | „aktivní" / „neaktivní" / „karanténa" / „prodáno" / „zemřelý" |
-| ringNumber | string | Číslo kroužku |
-| aviaryId | number | Cizí klíč -> voliéry |
-| hatchDate | date | Datum vylíhnutí (věk se vždy počítá dynamicky, nikdy se neukládá) |
-| origin | string | Původ / chovatel |
-| notes | string | Volné poznámky |
+
+| Pole       | Typ    | Popis                                                             |
+| ---------- | ------ | ----------------------------------------------------------------- |
+| id         | number | Jedinečný identifikátor                                           |
+| name       | string | Jméno ptáka                                                       |
+| species    | string | Druh, např. „Andulka", „Korela", „Rosela", „Kanár"                |
+| variety    | string | Odrůda specifická pro daný druh                                   |
+| mutation   | string | Barevná mutace                                                    |
+| gender     | string | „samec" / „samice" / „neznámé"                                    |
+| status     | string | „aktivní" / „neaktivní" / „karanténa" / „prodáno" / „zemřelý"     |
+| ringNumber | string | Číslo kroužku                                                     |
+| aviaryId   | number | Cizí klíč -> voliéry                                              |
+| hatchDate  | date   | Datum vylíhnutí (věk se vždy počítá dynamicky, nikdy se neukládá) |
+| origin     | string | Původ / chovatel                                                  |
+| notes      | string | Volné poznámky                                                    |
 
 > **Poznámka:** Věk ptáka se nikdy neukládá - vždy se dynamicky dopočítává z `hatchDate`.
 
 ### `aviaries` - voliéry
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| name | string | Název voliéry |
-| type | string | „Vnitřní" / „Venkovní" / „Sklep" |
-| capacity | number | Maximální kapacita ptáků |
-| dimensions | string | Rozměry, např. „2x2x3m" |
-| temperatureNotes | string | Poznámky k teplotě / klimatu |
+
+| Pole             | Typ    | Popis                            |
+| ---------------- | ------ | -------------------------------- |
+| id               | number | Jedinečný identifikátor          |
+| name             | string | Název voliéry                    |
+| type             | string | „Vnitřní" / „Venkovní" / „Sklep" |
+| capacity         | number | Maximální kapacita ptáků         |
+| dimensions       | string | Rozměry, např. „2x2x3m"          |
+| temperatureNotes | string | Poznámky k teplotě / klimatu     |
 
 > **Poznámka:** Aktuální obsazenost se nikdy neukládá - počítá se dynamicky podle aktivních ptáků v dané voliéře.
 
 ### `pairs` - chovné páry
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| maleBirdId | number | Cizí klíč -> ptáci (samec) |
-| femaleBirdId | number | Cizí klíč -> ptáci (samice) |
-| active | boolean | Je pár aktuálně aktivní? |
-| notes | string | Poznámky |
+
+| Pole         | Typ     | Popis                       |
+| ------------ | ------- | --------------------------- |
+| id           | number  | Jedinečný identifikátor     |
+| maleBirdId   | number  | Cizí klíč -> ptáci (samec)  |
+| femaleBirdId | number  | Cizí klíč -> ptáci (samice) |
+| active       | boolean | Je pár aktuálně aktivní?    |
+| notes        | string  | Poznámky                    |
 
 ### `breedingRecords` - záznamy o hnízdění
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| pairId | number | Cizí klíč -> páry |
-| eggsLaid | number | Celkový počet snesených vajec |
-| fertileEggs | number | Počet oplodněných vajec |
-| hatchedChicks | number | Počet vykulených mláďat |
-| survivedChicks | number | Počet přeživších mláďat |
-| deadChicks | number | Počet uhynulých mláďat |
-| breedingCycleStart | date | Začátek chovného cyklu |
-| breedingCycleEnd | date | Konec chovného cyklu (null = stále probíhá) |
-| notes | string | Poznámky |
+
+| Pole               | Typ    | Popis                                       |
+| ------------------ | ------ | ------------------------------------------- |
+| id                 | number | Jedinečný identifikátor                     |
+| pairId             | number | Cizí klíč -> páry                           |
+| eggsLaid           | number | Celkový počet snesených vajec               |
+| fertileEggs        | number | Počet oplodněných vajec                     |
+| hatchedChicks      | number | Počet vykulených mláďat                     |
+| survivedChicks     | number | Počet přeživších mláďat                     |
+| deadChicks         | number | Počet uhynulých mláďat                      |
+| breedingCycleStart | date   | Začátek chovného cyklu                      |
+| breedingCycleEnd   | date   | Konec chovného cyklu (null = stále probíhá) |
+| notes              | string | Poznámky                                    |
 
 ### `healthRecords` - zdravotní záznamy
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| birdId | number | Cizí klíč -> ptáci |
-| type | string | „Prohlídka" / „Zranění" / „Nemoc" / „Léky" / „Operace" |
-| date | date | Datum záznamu |
-| description | string | Popis |
-| medications | string | Předepsané léky |
-| vet | string | Jméno veterináře |
-| notes | string | Další poznámky |
+
+| Pole        | Typ    | Popis                                                  |
+| ----------- | ------ | ------------------------------------------------------ |
+| id          | number | Jedinečný identifikátor                                |
+| birdId      | number | Cizí klíč -> ptáci                                     |
+| type        | string | „Prohlídka" / „Zranění" / „Nemoc" / „Léky" / „Operace" |
+| date        | date   | Datum záznamu                                          |
+| description | string | Popis                                                  |
+| medications | string | Předepsané léky                                        |
+| vet         | string | Jméno veterináře                                       |
+| notes       | string | Další poznámky                                         |
 
 ### `feedingLogs` - záznamy o krmení
-| Pole | Typ | Popis |
-|------|-----|-------|
-| id | number | Jedinečný identifikátor |
-| aviaryId | number | Cizí klíč -> voliéry |
-| foodType | string | Typ krmiva, např. „Směs semen", „Peletky" |
-| quantity | string | Množství, např. „200g" |
-| supplements | string | Doplňky stravy |
-| feedingDate | date | Datum krmení |
-| notes | string | Poznámky |
+
+| Pole        | Typ    | Popis                                     |
+| ----------- | ------ | ----------------------------------------- |
+| id          | number | Jedinečný identifikátor                   |
+| aviaryId    | number | Cizí klíč -> voliéry                      |
+| foodType    | string | Typ krmiva, např. „Směs semen", „Peletky" |
+| quantity    | string | Množství, např. „200g"                    |
+| supplements | string | Doplňky stravy                            |
+| feedingDate | date   | Datum krmení                              |
+| notes       | string | Poznámky                                  |
 
 ---
 
 ## 🚀 Instalace a spuštění
 
 ### Požadavky
+
 - Node.js 18+
 - npm nebo yarn
 
 ### 1. Stáhněte projekt
+
 ```bash
 git clone <url-repozitáře>
 cd nest-finished/nest
 ```
 
 ### 2. Instalace závislostí
+
 ```bash
 npm install
 ```
 
 ### 3. Spuštění JSON Serveru (simulovaný backend)
+
 ```bash
-npm run server
+json-server --watch db.json --port 3001
 # Běží na http://localhost:3001
 ```
 
 ### 4. Spuštění vývojového serveru
+
 ```bash
 npm run dev
 # Běží na http://localhost:5173
@@ -207,19 +222,21 @@ Pro běh aplikace jsou potřeba dvě okna terminálu - jedno pro server a druhé
 
 ## 📦 Dostupné příkazy
 
-| Příkaz | Popis |
-|--------|-------|
-| `npm run dev` | Spustí Vite vývojový server |
-| `npm run build` | Sestaví produkční verzi |
-| `npm run preview` | Náhled produkčního sestavení |
-| `npm run server` | Spustí JSON Server na portu 3001 |
+| Příkaz            | Popis                            |
+| ----------------- | -------------------------------- |
+| `npm run dev`     | Spustí Vite vývojový server      |
+| `npm run build`   | Sestaví produkční verzi          |
+| `npm run preview` | Náhled produkčního sestavení     |
+| `npm run server`  | Spustí JSON Server na portu 3001 |
 
 ---
 
 ## 🏗 Architektura
 
 ### Konstanty (`src/constants/index.js`)
+
 Všechny výčty a seznamy možností jsou definovány na jednom místě a importovány tam, kde jsou potřeba:
+
 - `SPECIES`, `SPECIES_LIST` - druhy ptáků
 - `SPECIES_VARIETIES`, `SPECIES_MUTATIONS` - odrůdy a mutace podle druhu
 - `GENDER`, `BIRD_STATUS` - pohlaví a stavy ptáků
@@ -227,6 +244,7 @@ Všechny výčty a seznamy možností jsou definovány na jednom místě a impor
 - `OCCUPANCY_THRESHOLDS` - hranice pro bezpečnou / varovnou / nebezpečnou obsazenost
 
 ### Pomocné funkce (`src/utils/index.js`)
+
 - `formatDate(dateString)` - formátování data podle lokalizace
 - `calculateAge(hatchDate)` -> `{ months, years, label }` - věk se vždy počítá, nikdy neukládá
 - `calcOccupancyPercent(current, capacity)` - procento obsazenosti voliéry
@@ -235,11 +253,14 @@ Všechny výčty a seznamy možností jsou definovány na jednom místě a impor
 - `debounce(fn, delay)` - pomocná funkce pro zpoždění vyhledávání
 
 ### Obecný CRUD composable (`src/composables/useCrud.js`)
+
 Odstraňuje opakující se kód ve views. Stačí zavolat `useCrud(apiService, { defaultForm })` a dostaneš:
+
 - `items`, `loading`, `saving` - reaktivní stav
 - `loadAll()`, `openCreate()`, `openEdit(item)`, `save()`, `remove(id)` - akce
 
 ### Znovupoužitelné komponenty
+
 - **`StatusBadge`** - barevný odznak stavu (zelená/modrá/růžová/červená/oranžová/jantarová/šedá/fialová)
 - **`StatCard`** - karta s metrikou, ikonou a barevným akcentem
 - **`EmptyState`** - zobrazí se, když nejsou žádná data; obsahuje ikonu, titulek, popis a volitelný slot pro akci
@@ -251,6 +272,7 @@ Odstraňuje opakující se kód ve views. Stačí zavolat `useCrud(apiService, {
 ## 🔍 Systém filtrování
 
 Každý pohled s tabulkou dat obsahuje:
+
 - Debounced vyhledávací pole (zpoždění 300 ms)
 - Vypočtený `filteredItems`, který prohledává relevantní textová pole
 - Volitelné rozbalovací filtry pro druh nebo stav, kombinovatelné s textovým vyhledáváním

@@ -20,15 +20,17 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.charts.birdsBySpecies") }}</h3>
-        <div v-if="loading" class="h-48 flex items-center justify-center"><i
+        <div v-if="loading || !chartReady" class="h-48 flex items-center justify-center"><i
             class="pi pi-spin pi-spinner text-3xl text-gray-300"></i></div>
-        <Chart v-else type="doughnut" :data="speciesChartData" :options="doughnutOptions" style="height:200px" />
+        <Chart v-else :key="`species-${locale}`" type="doughnut" :data="speciesChartData" :options="doughnutOptions"
+          style="height:200px" />
       </div>
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.charts.breedingSuccessTrends") }}</h3>
-        <div v-if="loading" class="h-48 flex items-center justify-center"><i
+        <div v-if="loading || !chartReady" class="h-48 flex items-center justify-center"><i
             class="pi pi-spin pi-spinner text-3xl text-gray-300"></i></div>
-        <Chart v-else type="line" :data="breedingChartData" :options="lineOptions" style="height:200px" />
+        <Chart v-else :key="`breeding-${locale}`" type="line" :data="breedingChartData" :options="lineOptions"
+          style="height:200px" />
       </div>
     </div>
 
@@ -36,15 +38,17 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.charts.healthIssuesByType") }}</h3>
-        <div v-if="loading" class="h-48 flex items-center justify-center"><i
+        <div v-if="loading || !chartReady" class="h-48 flex items-center justify-center"><i
             class="pi pi-spin pi-spinner text-3xl text-gray-300"></i></div>
-        <Chart v-else type="bar" :data="healthChartData" :options="barOptions" style="height:200px" />
+        <Chart v-else :key="`health-${locale}`" type="bar" :data="healthChartData" :options="barOptions"
+          style="height:200px" />
       </div>
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.charts.aviaryOccupancy") }}</h3>
-        <div v-if="loading" class="h-48 flex items-center justify-center"><i
+        <div v-if="loading || !chartReady" class="h-48 flex items-center justify-center"><i
             class="pi pi-spin pi-spinner text-3xl text-gray-300"></i></div>
-        <Chart v-else type="bar" :data="aviaryChartData" :options="barOptions" style="height:200px" />
+        <Chart v-else :key="`aviary-${locale}`" type="bar" :data="aviaryChartData" :options="barOptions"
+          style="height:200px" />
       </div>
     </div>
 
@@ -52,17 +56,18 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.topBreedingPairs") }}</h3>
-        <div v-if="!topPairs.length" class="text-center py-6 text-slate-500 text-base">Žádná data</div>
+        <div v-if="!topPairs.length" class="text-center py-6 text-slate-500 text-base">{{ $t("statistics.noData") }}
+        </div>
         <div v-else class="space-y-3">
           <div v-for="pair in topPairs" :key="pair.id"
             class="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
             <div>
-              <p class="font-medium text-gray-900 text-base">Pár #{{ pair.id }}</p>
-              <p class="text-sm text-slate-600">{{ pair.successRate }}% úspěšnost</p>
+              <p class="font-medium text-gray-900 text-base">{{ $t("statistics.breedingPair") }} #{{ pair.id }}</p>
+              <p class="text-sm text-slate-600">{{ pair.successRate }}% {{ $t("statistics.successRate") }}</p>
             </div>
             <div class="text-right">
               <p class="text-lg font-bold text-emerald-600">{{ pair.totalChicks }}</p>
-              <p class="text-sm text-slate-600">mláďat</p>
+              <p class="text-sm text-slate-600">{{ $t("statistics.chicks") }}</p>
             </div>
           </div>
         </div>
@@ -70,8 +75,8 @@
 
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("statistics.recentActivity") }}</h3>
-        <div v-if="!recentActivities.length" class="text-center py-6 text-slate-500 text-base">Žádná nedávná aktivita
-        </div>
+        <div v-if="!recentActivities.length" class="text-center py-6 text-slate-500 text-base">{{
+          $t("statistics.noRecentActivity") }}</div>
         <div v-else class="space-y-3">
           <div v-for="act in recentActivities" :key="act.id" class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg">
             <div :class="['p-2 rounded-full flex-shrink-0', act.iconBg]">
@@ -98,6 +103,12 @@ import StatCard from "../components/StatCard.vue"
 import Button from "primevue/button"
 import Chart from "primevue/chart"
 
+import { useI18n } from "vue-i18n"
+
+const { t: $t, locale } = useI18n()
+
+const chartReady = ref(false)
+
 const birds = ref([])
 const pairs = ref([])
 const breedingRecords = ref([])
@@ -119,7 +130,7 @@ const stats = computed(() => {
 const speciesChartData = computed(() => {
   const counts = {}
   birds.value.forEach((b) => { counts[b.species] = (counts[b.species] || 0) + 1 })
-  const labels = Object.keys(counts)
+  const labels = Object.keys(counts || {})
   return {
     labels,
     datasets: [{ data: Object.values(counts), backgroundColor: labels.map((l) => SPECIES_COLORS[l] || "#94a3b8"), borderWidth: 0 }],
@@ -128,20 +139,42 @@ const speciesChartData = computed(() => {
 
 const breedingChartData = computed(() => {
   const monthlyData = {}
+
   breedingRecords.value.forEach((r) => {
-    const month = new Date(r.breedingCycleStart).toLocaleDateString("cs-CZ", { month: "short", year: "numeric" })
-    if (!monthlyData[month]) monthlyData[month] = { eggs: 0, hatched: 0 }
+    const month = new Date(r.breedingCycleStart).toLocaleDateString(locale.value, {
+      month: "short",
+      year: "numeric",
+    })
+
+    if (!monthlyData[month]) {
+      monthlyData[month] = {
+        eggs: 0,
+        hatched: 0,
+      }
+    }
+
     monthlyData[month].eggs += r.eggsLaid || 0
     monthlyData[month].hatched += r.hatchedChicks || 0
   })
+
   const labels = Object.keys(monthlyData)
+
   return {
     labels,
-    datasets: [{
-      label: "Úspěšnost líhnutí (%)",
-      data: labels.map((m) => monthlyData[m].eggs > 0 ? Math.round((monthlyData[m].hatched / monthlyData[m].eggs) * 100) : 0),
-      borderColor: "#10B981", backgroundColor: "rgba(16,185,129,0.1)", tension: 0.4, fill: true,
-    }],
+    datasets: [
+      {
+        label: $t("statistics.charts.hatchSuccessRate"),
+        data: labels.map((m) =>
+          monthlyData[m].eggs > 0
+            ? Math.round((monthlyData[m].hatched / monthlyData[m].eggs) * 100)
+            : 0
+        ),
+        borderColor: "#10B981",
+        backgroundColor: "rgba(16,185,129,0.1)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
   }
 })
 
@@ -149,8 +182,8 @@ const healthChartData = computed(() => {
   const counts = {}
   healthRecords.value.forEach((r) => { counts[r.type] = (counts[r.type] || 0) + 1 })
   return {
-    labels: Object.keys(counts),
-    datasets: [{ label: "Počet", data: Object.values(counts), backgroundColor: "#EF4444" }],
+    labels: Object.keys(counts || {}),
+    datasets: [{ label: $t("statistics.charts.count"), data: Object.values(counts || {}), backgroundColor: "#EF4444" }],
   }
 })
 
@@ -159,7 +192,7 @@ const aviaryChartData = computed(() => {
   return {
     labels: aviaries.value.map((a) => a.name),
     datasets: [{
-      label: "Obsazenost (%)",
+      label: $t("statistics.charts.occupancy"),
       data: aviaries.value.map((a) => {
         const occupied = birds.value.filter((b) => (b.aviaryId === a.id || b.aviaryId === +a.id) && b.status === "aktivní").length
         return a.capacity > 0 ? Math.round((occupied / a.capacity) * 100) : 0
@@ -184,16 +217,49 @@ const topPairs = computed(() => {
 
 const recentActivities = computed(() => {
   const acts = []
+
   breedingRecords.value.slice(-3).forEach((r) => {
-    acts.push({ id: `b-${r.id}`, title: "Nový chovný záznam", description: `Pár ${r.pairId} – ${r.hatchedChicks} mláďat`, date: formatDate(r.breedingCycleEnd || r.breedingCycleStart), icon: "pi pi-heart", iconBg: "bg-purple-100", iconColor: "text-purple-600" })
+    acts.push({
+      id: `b-${r.id}`,
+      title: $t("statistics.activities.newBreedingRecord"),
+      description: $t("statistics.activities.breedingDescription", {
+        pairId: r.pairId,
+        chicks: r.hatchedChicks,
+      }),
+      date: formatDate(r.breedingCycleEnd || r.breedingCycleStart),
+      icon: "pi pi-heart",
+      iconBg: "bg-purple-100",
+      iconColor: "text-purple-600",
+    })
   })
+
   healthRecords.value.slice(-2).forEach((r) => {
-    acts.push({ id: `h-${r.id}`, title: "Zdravotní záznam", description: `${r.type}`, date: formatDate(r.date), icon: "pi pi-heart-fill", iconBg: "bg-red-100", iconColor: "text-red-600" })
+    acts.push({
+      id: `h-${r.id}`,
+      title: $t("statistics.activities.healthRecord"),
+      description: r.type,
+      date: formatDate(r.date),
+      icon: "pi pi-heart-fill",
+      iconBg: "bg-red-100",
+      iconColor: "text-red-600",
+    })
   })
+
   feedingLogs.value.slice(-2).forEach((l) => {
-    acts.push({ id: `f-${l.id}`, title: "Krmení dokončeno", description: `${l.foodType}`, date: formatDate(l.feedingDate), icon: "pi pi-shopping-cart", iconBg: "bg-green-100", iconColor: "text-green-600" })
+    acts.push({
+      id: `f-${l.id}`,
+      title: $t("statistics.activities.feedingCompleted"),
+      description: l.foodType,
+      date: formatDate(l.feedingDate),
+      icon: "pi pi-shopping-cart",
+      iconBg: "bg-green-100",
+      iconColor: "text-green-600",
+    })
   })
-  return acts.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6)
+
+  return acts
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 6)
 })
 
 const chartBaseOptions = { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
@@ -203,18 +269,31 @@ const barOptions = { ...chartBaseOptions, scales: { y: { beginAtZero: true } } }
 
 const loadData = async () => {
   loading.value = true
+  chartReady.value = false
+
   try {
     const [bRes, pRes, brRes, hRes, avRes, fRes] = await Promise.all([
-      birdsApi.getAll(), pairsApi.getAll(), breedingApi.getAll(), healthApi.getAll(), aviariesApi.getAll(), feedingApi.getAll(),
+      birdsApi.getAll(),
+      pairsApi.getAll(),
+      breedingApi.getAll(),
+      healthApi.getAll(),
+      aviariesApi.getAll(),
+      feedingApi.getAll(),
     ])
+
     birds.value = bRes.data
     pairs.value = pRes.data
     breedingRecords.value = brRes.data
     healthRecords.value = hRes.data
     aviaries.value = avRes.data
     feedingLogs.value = fRes.data
-  } catch (e) { console.error("Statistics load failed:", e) }
-  finally { loading.value = false }
+
+    chartReady.value = true
+  } catch (e) {
+    console.error("Statistics load failed:", e)
+  } finally {
+    loading.value = false
+  }
 }
 
 onMounted(loadData)

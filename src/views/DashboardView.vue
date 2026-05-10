@@ -22,14 +22,14 @@
       <!-- Species Distribution -->
       <div class="card p-5">
         <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("dashboard.charts.speciesDistribution") }}</h3>
-        <div v-if="loading" class="h-48 flex items-center justify-center">
-          <i class="pi pi-spin pi-spinner text-3xl text-gray-300"></i>
+        <div class="relative h-[400px]">
+          <div v-if="loading"
+            class="absolute inset-0 flex items-center justify-center bg-white/70 dark:bg-slate-900/70 z-10 rounded-xl">
+            <i class="pi pi-spin pi-spinner text-3xl text-gray-300"></i>
+          </div>
+
+          <Chart type="doughnut" :data="speciesChartData" :options="doughnutOptions" class="w-full h-full" />
         </div>
-        <Chart v-else type="doughnut" :data="speciesChartData" :options="{
-          ...doughnutOptions,
-          responsive: true,
-          maintainAspectRatio: false
-        }" class="w-full" :style="{ height: '400px' }" />
       </div>
 
       <!-- Recent Activities -->
@@ -65,8 +65,8 @@
               <p class="text-sm text-slate-600">Začátek: {{ formatDate(cycle.breedingCycleStart) }}</p>
             </div>
             <div class="text-right">
-              <p class="text-base font-medium text-gray-900">{{ cycle.eggsLaid }} vajec</p>
-              <p class="text-sm text-slate-600">{{ cycle.hatchedChicks }} vylíhnuto</p>
+              <p class="text-base font-medium text-gray-900">{{ cycle.eggsLaid }} {{ $t("dashboard.charts.eggs") }}</p>
+              <p class="text-sm text-slate-600">{{ cycle.hatchedChicks }} {{ $t("dashboard.charts.hatchedChicks") }}</p>
             </div>
           </div>
           <OccupancyBar :current="cycle.hatchedChicks" :capacity="cycle.eggsLaid" />
@@ -84,7 +84,9 @@ import { formatDate, formatTimeAgo } from "../utils"
 import { SPECIES_COLORS } from "../constants"
 import StatCard from "../components/StatCard.vue"
 import OccupancyBar from "../components/OccupancyBar.vue"
+import "chart.js/auto"
 import Chart from "primevue/chart"
+
 
 const { t } = useI18n()
 const birds = ref([])
@@ -104,18 +106,28 @@ const stats = computed(() => {
 
 const speciesChartData = computed(() => {
   const counts = {}
-  birds.value.forEach((b) => { counts[b.species] = (counts[b.species] || 0) + 1 })
+
+  birds.value.forEach((b) => {
+    if (!b.species) return
+    counts[b.species] = (counts[b.species] || 0) + 1
+  })
+
   const labels = Object.keys(counts)
+  const values = Object.values(counts)
+
   return {
     labels,
-    datasets: [{
-      data: Object.values(counts),
-      backgroundColor: labels.map((l) => SPECIES_COLORS[l] || "#94a3b8"),
-      borderWidth: 0,
-    }],
+    datasets: [
+      {
+        data: values.length ? values : [1],
+        backgroundColor: labels.length
+          ? labels.map((l) => SPECIES_COLORS[l] || "#94a3b8")
+          : ["#cbd5e1"],
+        borderWidth: 0,
+      },
+    ],
   }
 })
-
 const doughnutOptions = {
   responsive: true, maintainAspectRatio: false,
   plugins: { legend: { position: "bottom", labels: { usePointStyle: true, padding: 12 } } },
@@ -128,7 +140,7 @@ const recentActivities = computed(() => {
     acts.push({
       id: `b-${r.id}`,
       title: t("dashboard.activity.breedingRecordAdded"),
-      description: `Pár ${r.pairId} – ${r.hatchedChicks} mláďat`,
+      description: `Pár ${r.pairId} – ${r.hatchedChicks} ${t("dashboard.activity.eggsHatched")}`,
       date: r.breedingCycleEnd || r.breedingCycleStart,
       icon: "pi pi-heart",
       iconBg: "bg-purple-100",
@@ -137,7 +149,7 @@ const recentActivities = computed(() => {
   })
   feedingLogs.value.slice(-2).forEach((l) => {
     acts.push({
-      id: `f-${l.id}`,
+      id: `f - ${l.id}`,
       title: t("dashboard.activity.feedingCompleted"),
       description: `${l.foodType}`,
       date: l.feedingDate,

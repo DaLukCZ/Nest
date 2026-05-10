@@ -99,8 +99,8 @@
         <div class="form-grid form-grid--2">
           <section class="form-section">
             <div class="form-section-header">
-              <h3 class="form-section-title">Zakladni udaje</h3>
-              <p class="form-section-description">Identita, druh a zakladni klasifikace ptaka.</p>
+              <h3 class="form-section-title">{{ $t('birds.identity') }}</h3>
+              <p class="form-section-description">{{ $t('birds.identityDescription') }}</p>
             </div>
             <div class="form-fields">
               <div class="form-field">
@@ -131,8 +131,8 @@
           </section>
           <section class="form-section">
             <div class="form-section-header">
-              <h3 class="form-section-title">Evidence a umisteni</h3>
-              <p class="form-section-description">Krouzek, datum, status a voliera.</p>
+              <h3 class="form-section-title">{{ $t('birds.evidence') }}</h3>
+              <p class="form-section-description">{{ $t('birds.evidenceDescription') }}</p>
             </div>
             <div class="form-fields">
               <div class="form-field">
@@ -163,8 +163,8 @@
         </div>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Poznamky</h3>
-            <p class="form-section-description">Doplňujici informace, ktere nechcete ztratit.</p>
+            <h3 class="form-section-title">{{ $t('birds.notes') }}</h3>
+            <p class="form-section-description">{{ $t('birds.notesDescription') }}</p>
           </div>
           <div class="form-field">
             <label class="form-label">{{ $t("common.notes") }}</label>
@@ -306,13 +306,30 @@ const filteredBirds = computed(() => {
 
 const getAviaryName = (aviaryId) => {
   if (!aviaryId) return "—"
-  const av = aviaries.value.find((a) => a.id === aviaryId || a.id === +aviaryId)
+  const av = aviaries.value.find((a) => a.id == aviaryId || a.id == +aviaryId)
   return av ? av.name : `Voliéra ${aviaryId}`
 }
 
 const statusVariant = (status) => ({ "aktivni": "green", "neaktivni": "gray", "karantena": "orange", "prodano": "blue", "zemrely": "red", "aktivní": "green", "neaktivní": "gray", "karanténa": "orange", "prodáno": "blue", "zemřelý": "red" }[status] ?? "gray")
 
-const calcAge = (hatchDate) => calculateAge(hatchDate).label
+
+const calcAge = (hatchDate) => {
+  const age = calculateAge(hatchDate)
+
+  if (!age.parts.years && !age.parts.months) {
+    return "—"
+  }
+
+  const parts = []
+
+  if (age.parts.years > 0) {
+    parts.push(t("age.yearsShort", { count: age.parts.years }))
+  }
+
+  parts.push(t("age.monthsShort", { count: age.parts.months }))
+
+  return parts.join(" ")
+}
 
 const detailFields = computed(() => {
   if (!selectedBird.value) return []

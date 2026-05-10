@@ -4,17 +4,20 @@
       <span>{{ current }} / {{ capacity }}</span>
       <span :class="percentageClass">{{ percent }}%</span>
     </div>
+
     <div class="w-full bg-slate-200 rounded-full" :class="heightClass">
       <div class="rounded-full transition-all duration-500" :class="[barClass, heightClass]"
-        :style="{ width: `${percent}%` }"></div>
+        :style="{ width: `${percent}%` }" />
     </div>
+
     <p v-if="showWarning && severity === 'danger'" class="text-sm text-red-600 mt-1.5 flex items-center gap-1">
-      <i class="pi pi-exclamation-triangle text-sm"></i>
-      Přeplněno!
+      <i class="pi pi-exclamation-triangle text-sm" />
+      {{ $t("occupancy.overcrowded") }}
     </p>
+
     <p v-else-if="showWarning && severity === 'warning'" class="text-sm text-amber-600 mt-1.5 flex items-center gap-1">
-      <i class="pi pi-exclamation-circle text-sm"></i>
-      Téměř plno
+      <i class="pi pi-exclamation-circle text-sm" />
+      {{ $t("occupancy.almostFull") }}
     </p>
   </div>
 </template>

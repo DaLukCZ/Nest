@@ -2,7 +2,7 @@
   <div class="app-shell min-h-screen transition-colors duration-200" :class="{ 'opacity-90': isTransitioning }">
     <!-- Sidebar -->
     <aside class="app-sidebar fixed inset-y-0 left-0 z-50 w-64 flex flex-col border-r shadow-sm">
-      <!-- Logo -->
+      <!-- Logo UDĚLAT POZDĚJI VLASTNI OPRAVDU IKONU-->
       <div
         class="flex items-center gap-3 h-16 px-5 bg-gradient-to-r from-sky-50 to-blue-100 border-b border-blue-200 flex-shrink-0">
         <h1 class="text-lg font-bold text-blue-900 tracking-tight">{{ $t('app.name') }}</h1>
@@ -52,28 +52,41 @@
     <!-- Main Content -->
     <div class="ml-64 flex flex-col min-h-screen">
       <!-- Header -->
-      <header class="app-header sticky top-0 z-40 border-b h-16 flex-shrink-0">
+      <header class="sticky top-0 z-40 h-16 flex-shrink-0 border-b border-slate-200 bg-white/90 backdrop-blur">
         <div class="flex items-center justify-between h-full px-6">
-          <h2 class="text-xl font-semibold text-gray-900">{{ currentPageTitle }}</h2>
+          <!-- Left -->
           <div class="flex items-center gap-3">
-            <!-- Language Switcher -->
-            <div class="relative">
-              <Button text rounded @click="showLanguageMenu = !showLanguageMenu"
-                v-tooltip.bottom="$t('language.select')" class="language-button !px-3 !py-2">
-                <span class="text-lg">{{ currentLanguageFlag }}</span>
-                <span class="text-base font-semibold ml-1.5 text-gray-800">{{ currentLanguageCode.toUpperCase()
-                  }}</span>
-                <i class="pi pi-chevron-down text-sm ml-1 text-gray-500"></i>
-              </Button>
-              <div v-if="showLanguageMenu"
-                class="language-menu absolute right-0 mt-2 w-40 rounded-xl shadow-lg border z-50 py-1.5">
-                <div v-for="lang in availableLanguages" :key="lang.code" @click="changeLanguage(lang.code)"
-                  class="language-menu-item flex items-center gap-2 px-3 py-2.5 cursor-pointer transition-colors text-base"
-                  :class="{ 'text-blue-600 font-semibold': lang.code === currentLanguageCode, 'text-slate-700': lang.code !== currentLanguageCode }">
-                  <span class="text-base">{{ lang.flag }}</span>
-                  <span>{{ lang.name }}</span>
-                </div>
-              </div>
+            <div class="w-9 h-9 bg-primary-100 flex items-center justify-center">
+              <i class="pi pi-home text-primary-600"></i>
+            </div>
+
+            <div>
+              <h2 class="text-xl font-semibold text-slate-900 leading-tight">
+                {{ currentPageTitle }}
+              </h2>
+
+              <p class="text-xs text-slate-500">
+                {{ new Date().toLocaleDateString(locale, {
+                  weekday: 'long',
+                  day: 'numeric',
+                  month: 'long'
+                }) }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="flex items-center gap-4">
+            <!-- Language Pills -->
+            <div class="flex items-center rounded-2xl bg-slate-100 p-1 border border-slate-200">
+              <button v-for="lang in availableLanguages" :key="lang.code" @click="setLanguage(lang.code)"
+                class="px-3 py-1.5 rounded-xl text-sm font-medium transition-all duration-200" :class="locale === lang.code
+                  ? 'bg-white shadow-sm text-slate-900 border border-slate-200'
+                  : 'text-slate-500 hover:text-slate-900 hover:bg-white/70'
+                  ">
+                <span class="mr-1">{{ lang.flag }}</span>
+                {{ lang.code.toUpperCase() }}
+              </button>
             </div>
           </div>
         </div>
@@ -105,11 +118,13 @@ import Button from 'primevue/button'
 import Toast from 'primevue/toast'
 
 const route = useRoute()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const isTransitioning = ref(false)
 
 const showLanguageMenu = ref(false)
-const currentLanguageCode = ref(getCurrentLanguage())
+
+const currentLanguageCode = computed(() => getCurrentLanguage())
+
 const availableLanguages = getAvailableLanguages()
 
 const currentLanguageFlag = computed(() => {
@@ -132,9 +147,9 @@ const currentPageTitle = computed(() => {
   return t(titles[route.path] || 'app.title')
 })
 
-const changeLanguage = (locale) => {
-  setLanguage(locale)
-  currentLanguageCode.value = locale
+const changeLanguage = (newLocale) => {
+  setLanguage(newLocale)
+
   showLanguageMenu.value = false
 }
 

@@ -3,7 +3,8 @@
     <div class="flex items-center justify-between">
       <div>
         <h1 class="text-2xl font-bold text-gray-900">{{ $t("pairs.breedingPairs") }}</h1>
-        <p class="text-base text-slate-600 mt-0.5">{{ pairs.length }} párů · {{ activePairs }} aktivních</p>
+        <p class="text-base text-slate-600 mt-0.5">{{ pairs.length }} {{ $t('common.pairs') }} · {{ activePairs }} {{
+          $t('common.active') }}</p>
       </div>
       <Button icon="pi pi-plus" :label="$t('pairs.createPair')" @click="openAddDialog" />
     </div>
@@ -25,7 +26,8 @@
           <div class="flex items-center gap-2">
             <StatusBadge :variant="pair.active ? 'green' : 'gray'"
               :label="pair.active ? $t('common.active') : $t('common.inactive')" />
-            <span class="text-sm text-slate-600">Pár #{{ pair.id }}</span>
+            <span class="text-sm text-slate-600">{{
+              $t('common.pairId') }} {{ pair.id }}</span>
           </div>
           <div class="flex gap-1">
             <Button icon="pi pi-eye" text rounded size="small" severity="secondary" @click="viewPairHistory(pair)" />
@@ -41,7 +43,8 @@
               <i class="pi pi-mars text-blue-600 text-sm"></i>
             </div>
             <div class="min-w-0">
-              <p class="font-medium text-gray-900 text-base truncate">{{ getBirdName(pair.maleBirdId) }}</p>
+              <p class="font-medium text-gray-900 text-base truncate">{{ getBirdName(pair.maleBirdId) }} - {{
+                getBirdRingNumber(pair.maleBirdId) }}</p>
               <p class="text-sm text-slate-600 truncate">{{ getBirdSpecies(pair.maleBirdId) }}</p>
             </div>
           </div>
@@ -50,7 +53,8 @@
               <i class="pi pi-venus text-pink-600 text-sm"></i>
             </div>
             <div class="min-w-0">
-              <p class="font-medium text-gray-900 text-base truncate">{{ getBirdName(pair.femaleBirdId) }}</p>
+              <p class="font-medium text-gray-900 text-base truncate">{{ getBirdName(pair.femaleBirdId) }} - {{
+                getBirdRingNumber(pair.femaleBirdId) }}</p>
               <p class="text-sm text-slate-600 truncate">{{ getBirdSpecies(pair.femaleBirdId) }}</p>
             </div>
           </div>
@@ -79,8 +83,7 @@
 
       <!-- Empty state -->
       <div v-if="!loading && pairs.length === 0" class="col-span-full">
-        <EmptyState icon="pi pi-heart" title="Žádné páry"
-          description="Vytvořte první chovný pár pomocí tlačítka výše." />
+        <EmptyState icon="pi pi-heart" :title="$t('pairs.noPairs')" :description="$t('pairs.noPairsDescription')" />
       </div>
     </div>
 
@@ -90,8 +93,8 @@
       <form @submit.prevent="savePair" class="form-shell">
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Vyber paru</h3>
-            <p class="form-section-description">Vyberte aktivniho samce a samici z dostupnych ptaku.</p>
+            <h3 class="form-section-title">{{ $t('pairs.selectPair') }}</h3>
+            <p class="form-section-description">{{ $t('pairs.selectPairDescription') }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
@@ -108,8 +111,8 @@
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Stav a poznamky</h3>
-            <p class="form-section-description">Nastavte, zda je par aktivni, a doplnte kontext.</p>
+            <h3 class="form-section-title">{{ $t('pairs.statusAndNotes') }}</h3>
+            <p class="form-section-description">{{ $t('pairs.statusAndNotesDescription') }} </p>
           </div>
           <div class="form-fields">
             <div class="form-toggle-row">
@@ -189,8 +192,9 @@
       </div>
     </Dialog>
 
-    <DeleteConfirmDialog v-model="showDeleteDialog" title="Smazat pár?" :message="$t('messages.confirmDelete')"
-      :loading="deleting" @confirm="doDeletePair" />
+    <DeleteConfirmDialog v-model="showDeleteDialog"
+      :title="`${selectedPair?.maleBirdId ? getBirdName(selectedPair.maleBirdId) : 'Pták'} – ${selectedPair?.femaleBirdId ? getBirdName(selectedPair.femaleBirdId) : 'Pták'}?`"
+      :message="$t('messages.confirmDelete')" :loading="deleting" @confirm="doDeletePair" />
   </div>
 </template>
 
@@ -246,6 +250,10 @@ const availableFemales = computed(() => {
 const getBirdName = (id) => {
   const b = birds.value.find((b) => b.id == id || b.id == +id)
   return b ? b.name : `Pták ${id}`
+}
+const getBirdRingNumber = (id) => {
+  const b = birds.value.find((b) => b.id == id || b.id == +id)
+  return b ? b.ringNumber : `Kroužek ${id}`
 }
 const getBirdSpecies = (id) => {
   const b = birds.value.find((b) => b.id == id || b.id == +id)

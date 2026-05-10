@@ -25,14 +25,14 @@
         <div class="flex items-center justify-between">
           <div>
             <p class="font-medium text-gray-900 text-base">{{ $t("settings.export") }}</p>
-            <p class="text-base text-slate-600">Export dat do JSON souboru</p>
+            <p class="text-base text-slate-600">{{ $t("settings.exportDescription") }}</p>
           </div>
           <Button :label="$t('settings.export')" icon="pi pi-download" outlined @click="exportData" />
         </div>
         <div class="flex items-center justify-between">
           <div>
             <p class="font-medium text-gray-900 text-base">{{ $t("settings.import") }}</p>
-            <p class="text-base text-slate-600">Import dat ze zálohy JSON</p>
+            <p class="text-base text-slate-600">{{ $t("settings.importDescription") }}</p>
           </div>
           <div>
             <input ref="fileInput" type="file" accept=".json" @change="handleFileSelect" class="hidden" />
@@ -42,7 +42,7 @@
         <div class="flex items-center justify-between">
           <div>
             <p class="font-medium text-red-600 text-base">{{ $t("settings.reset") }}</p>
-            <p class="text-base text-slate-600">Trvale smaže všechna data</p>
+            <p class="text-base text-slate-600">{{ $t("settings.resetDescription") }}</p>
           </div>
           <Button :label="$t('settings.reset')" icon="pi pi-trash" severity="danger" outlined @click="confirmReset" />
         </div>
@@ -51,29 +51,29 @@
 
     <!-- System Info -->
     <div class="card p-6">
-      <h3 class="text-lg font-semibold text-gray-900 mb-4">Informace o systému</h3>
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ $t("settings.systemInfo") }}</h3>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
         <div>
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Verze</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t("settings.version") }}</p>
           <p class="font-semibold text-gray-900">0.5.12</p>
         </div>
         <div>
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Datum</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t("settings.date") }}</p>
           <p class="font-semibold text-gray-900">{{ new Date().toLocaleDateString("cs-CZ") }}</p>
         </div>
         <div>
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Celkem záznamů</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t("settings.totalRecords") }}</p>
           <p class="font-semibold text-gray-900">{{ totalRecords }}</p>
         </div>
         <div>
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Velikost dat</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t("settings.storage") }}</p>
           <p class="font-semibold text-gray-900">~{{ storageSize }} KB</p>
         </div>
       </div>
     </div>
 
     <!-- Reset Confirmation -->
-    <Dialog v-model:visible="showResetDialog" header="Potvrdit reset databáze" modal :draggable="false"
+    <Dialog v-model:visible="showResetDialog" :header="$t('settings.reset')" modal :draggable="false"
       class="w-full max-w-md">
       <div class="space-y-4">
         <div class="p-4 bg-red-50 rounded-lg flex gap-3">
@@ -84,7 +84,7 @@
           </div>
         </div>
         <div>
-          <label class="block text-base font-medium text-gray-700 mb-2">Pro potvrzení napište RESET</label>
+          <label class="block text-base font-medium text-gray-700 mb-2">{{ $t("settings.confirmReset") }}</label>
           <InputText v-model="resetConfirmation" class="w-full" placeholder="RESET" />
         </div>
       </div>

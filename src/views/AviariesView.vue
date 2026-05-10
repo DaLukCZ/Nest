@@ -25,11 +25,6 @@
         <!-- Card Header -->
         <div class="flex items-start justify-between mb-4">
           <div class="flex items-center gap-3">
-            <div
-              :class="['p-2.5 rounded-lg', aviary.type === 'Sklep' ? 'bg-gray-100' : aviary.type === 'Venkovní' ? 'bg-emerald-100' : 'bg-blue-100']">
-              <i
-                :class="['text-lg', aviary.type === 'Sklep' ? 'pi pi-box text-gray-600' : aviary.type === 'Venkovní' ? 'pi pi-sun text-emerald-600' : 'pi pi-building text-blue-600']"></i>
-            </div>
             <div>
               <h3 class="text-lg font-semibold text-gray-900">{{ aviary.name }}</h3>
               <p class="text-sm text-slate-600">{{ aviary.type }} · {{ aviary.location }}</p>
@@ -46,16 +41,16 @@
         <div class="grid grid-cols-3 gap-2 mb-4 text-center">
           <div class="bg-slate-50 rounded-lg p-2">
             <p class="text-lg font-bold text-gray-900">{{ getOccupancy(aviary.id) }}</p>
-            <p class="text-sm text-slate-600">Ptáků</p>
+            <p class="text-sm text-slate-600">{{ $t("aviaries.occupied") }}</p>
           </div>
           <div class="bg-slate-50 rounded-lg p-2">
             <p class="text-lg font-bold text-gray-900">{{ aviary.capacity }}</p>
-            <p class="text-sm text-slate-600">Kapacita</p>
+            <p class="text-sm text-slate-600">{{ $t("aviaries.capacity") }}</p>
           </div>
           <div class="bg-slate-50 rounded-lg p-2">
             <p class="text-lg font-bold" :class="getFreeColor(aviary)">{{ aviary.capacity - getOccupancy(aviary.id) }}
             </p>
-            <p class="text-sm text-slate-600">Volných</p>
+            <p class="text-sm text-slate-600">{{ $t("aviaries.free") }}</p>
           </div>
         </div>
 
@@ -71,8 +66,8 @@
 
       <!-- Empty state -->
       <div v-if="!loading && aviaries.length === 0" class="col-span-full">
-        <EmptyState icon="pi pi-building" title="Žádné voliéry"
-          description="Přidejte první voliéru pomocí tlačítka výše." />
+        <EmptyState icon="pi pi-building" :title="$t('aviaries.noAviaries')"
+          :description="$t('aviaries.noAviariesDescription')" />
       </div>
     </div>
 
@@ -82,8 +77,8 @@
       <form @submit.prevent="saveAviary" class="form-shell">
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Zakladni udaje</h3>
-            <p class="form-section-description">Nazev a zarazeni voliery.</p>
+            <h3 class="form-section-title">{{ $t("aviaries.basicInfo") }}</h3>
+            <p class="form-section-description">{{ $t("aviaries.basicInfoDescription") }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
@@ -104,8 +99,8 @@
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Kapacita a prostredi</h3>
-            <p class="form-section-description">Rozmery, kapacita a provozni podminky.</p>
+            <h3 class="form-section-title">{{ $t("aviaries.capacityAndEnvironment") }}</h3>
+            <p class="form-section-description">{{ $t("aviaries.capacityAndEnvironmentDescription") }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
@@ -132,7 +127,7 @@
     </Dialog>
 
     <!-- Delete Confirmation -->
-    <DeleteConfirmDialog v-model="showDeleteDialog" :title="`Smazat ${aviaryToDelete?.name}?`"
+    <DeleteConfirmDialog v-model="showDeleteDialog" :title="$t('messages.delete') + ` ${aviaryToDelete?.name}?`"
       :message="$t('aviaries.confirmDelete')" :loading="deleting" @confirm="doDeleteAviary" />
   </div>
 </template>

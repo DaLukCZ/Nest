@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <div>
         <h1 class="text-2xl font-bold text-gray-900">{{ $t("health.healthRecords") }}</h1>
-        <p class="text-base text-slate-600 mt-0.5">{{ healthRecords.length }} záznamů</p>
+        <p class="text-base text-slate-600 mt-0.5">{{ healthRecords.length }} {{ $t('common.records') }}</p>
       </div>
       <Button icon="pi pi-plus" :label="$t('health.addHealthRecord')" @click="openAddDialog" />
     </div>
@@ -22,8 +22,8 @@
       <DataTable :value="healthRecords" :loading="loading" paginator :rows="15" dataKey="id" stripedRows
         class="p-datatable-sm">
         <template #empty>
-          <EmptyState icon="pi pi-heart-fill" title="Žádné zdravotní záznamy"
-            description="Přidejte první záznam pomocí tlačítka výše." />
+          <EmptyState icon="pi pi-heart-fill" :title="$t('health.noRecords')"
+            :description="$t('health.noRecordsDescription')" />
         </template>
         <Column :header="$t('health.bird')">
           <template #body="{ data }">
@@ -69,36 +69,36 @@
       <div v-if="selectedRecord" class="space-y-4">
         <div class="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Pták</p>
+            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('health.bird') }}</p>
             <p class="font-medium text-gray-900">{{ getBirdName(selectedRecord.birdId) }}</p>
           </div>
           <div>
-            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">Typ</p>
+            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">{{ $t('common.type') }}</p>
             <StatusBadge :variant="severityVariant(selectedRecord.type)" :label="selectedRecord.type" />
           </div>
           <div>
-            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Datum</p>
+            <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('common.date') }}</p>
             <p class="font-medium text-gray-900">{{ formatDate(selectedRecord.date) }}</p>
           </div>
           <div>
-            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">Stav</p>
+            <p class="text-gray-400 text-xs uppercase tracking-wide mb-1">{{ $t('health.status') }}</p>
             <StatusBadge :variant="statusVariant(selectedRecord)" :label="statusLabel(selectedRecord)" />
           </div>
         </div>
         <div v-if="selectedRecord.description">
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Popis</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('health.description') }} </p>
           <p class="text-base text-slate-700">{{ selectedRecord.description }}</p>
         </div>
         <div v-if="selectedRecord.medications" class="bg-amber-50 rounded-lg p-3">
-          <p class="text-sm text-amber-700 font-medium mb-1">Léky</p>
+          <p class="text-sm text-amber-700 font-medium mb-1">{{ $t('health.medications') }}</p>
           <p class="text-base text-slate-700">{{ selectedRecord.medications }}</p>
         </div>
         <div v-if="selectedRecord.vetName">
-          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">Veterinář</p>
+          <p class="text-slate-500 text-sm uppercase tracking-wide mb-1">{{ $t('health.vetName') }}</p>
           <p class="text-base text-slate-700">{{ selectedRecord.vetName }}</p>
         </div>
         <div v-if="selectedRecord.notes" class="bg-slate-50 rounded-lg p-3">
-          <p class="text-sm text-slate-500 uppercase tracking-wide mb-1">Poznámky</p>
+          <p class="text-sm text-slate-500 uppercase tracking-wide mb-1">{{ $t('health.notes') }}</p>
           <p class="text-base text-slate-700">{{ selectedRecord.notes }}</p>
         </div>
       </div>
@@ -111,12 +111,12 @@
       <form @submit.prevent="saveRecord" class="form-shell">
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Zaklad zaznamu</h3>
-            <p class="form-section-description">Komu se udalost tyka a kdy probehla.</p>
+            <h3 class="form-section-title">{{ $t("health.recordDetails") }}</h3>
+            <p class="form-section-description">{{ $t("health.recordDescription") }}</p>
           </div>
           <div class="form-fields">
             <div class="form-field">
-              <label class="form-label">Pták *</label>
+              <label class="form-label">{{ $t("health.bird") }} *</label>
               <Select v-model="recordForm.birdId" :options="birds" option-label="name" option-value="id"
                 :placeholder="$t('health.selectBird')" class="w-full" filter required />
             </div>
@@ -139,8 +139,8 @@
         </section>
         <section class="form-section">
           <div class="form-section-header">
-            <h3 class="form-section-title">Lecba a nasledna pece</h3>
-            <p class="form-section-description">Leky, veterinar a doplnkove poznamky.</p>
+            <h3 class="form-section-title">{{ $t("health.treatment") }}</h3>
+            <p class="form-section-description">{{ $t("health.treatmentDescription") }}</p>
           </div>
           <div class="form-grid form-grid--2">
             <div class="form-field">
@@ -148,7 +148,7 @@
               <InputText v-model="recordForm.medications" class="w-full" />
             </div>
             <div class="form-field">
-              <label class="form-label">Veterinář</label>
+              <label class="form-label">{{ $t("health.vetName") }}</label>
               <InputText v-model="recordForm.vetName" class="w-full" />
             </div>
           </div>
@@ -164,7 +164,7 @@
       </form>
     </Dialog>
 
-    <DeleteConfirmDialog v-model="showDeleteDialog" title="Smazat zdravotní záznam?"
+    <DeleteConfirmDialog v-model="showDeleteDialog" :title="$t('health.confirmDelete')"
       :message="$t('messages.confirmDelete')" :loading="deleting" @confirm="doDeleteRecord" />
   </div>
 </template>
@@ -223,8 +223,13 @@ const resolvedCount = computed(() =>
 const vetVisitsCount = computed(() => healthRecords.value.filter((r) => r.vetName).length)
 
 const getBirdName = (birdId) => {
-  const b = birds.value.find((b) => b.id === birdId || b.id === +birdId)
-  return b ? `${b.name} (${b.ringNumber || "—"})` : `Pták ${birdId}`
+  const b = birds.value.find(
+    (b) => b.id === birdId || b.id === +birdId
+  )
+
+  return b
+    ? `${b.name} (${b.ringNumber || "—"})`
+    : t("health.birdFallback", { id: birdId })
 }
 
 const severityVariant = (type) => ({
