@@ -219,17 +219,6 @@ Pro běh aplikace jsou potřeba dvě okna terminálu - jedno pro server a druhé
 
 ---
 
-## 📦 Dostupné příkazy
-
-| Příkaz            | Popis                            |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Spustí Vite vývojový server      |
-| `npm run build`   | Sestaví produkční verzi          |
-| `npm run preview` | Náhled produkčního sestavení     |
-| `npm run server`  | Spustí JSON Server na portu 3001 |
-
----
-
 ## 🏗 Architektura
 
 ### Konstanty (`src/constants/index.js`)
