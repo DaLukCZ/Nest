@@ -11,8 +11,8 @@ Webová aplikace pro správu ptačích voliér, chovných párů, zdravotních z
 ## ✨ Co aplikace umí
 
 - **Přehled (Dashboard)** - rychlý souhrn všech ptáků, aktivních hnízdění a poslední aktivity
-- **Správa ptáků** - přidávání, úprava a mazání ptáků; výběr odrůdy a mutace podle druhu; dynamický výpočet věku; filtrování a stránkování
-- **Voliéry** - přehled voliér s barevným ukazatelem obsazenosti; upozornění při přeplnění
+- **Správa ptáků** - přidávání, úprava a mazání ptáků, výběr odrůdy a mutace podle druhu, dynamický výpočet věku, filtrování a stránkování
+- **Voliéry** - přehled voliér s barevným ukazatelem obsazenosti, upozornění při přeplnění
 - **Chovné páry** - zakládání párů, přehled jejich historiky a výpočet úspěšnosti odchovu
 - **Záznamy o hnízdění** - sledování celého cyklu: vajíčka -> vykulená -> přeživší -> uhynulá
 - **Krmení** - záznamy o krmení podle voliér, typy krmiva, doplňky stravy
