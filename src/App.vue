@@ -56,10 +56,6 @@
         <div class="flex items-center justify-between h-full px-6">
           <!-- Left -->
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 bg-primary-100 flex items-center justify-center">
-              <i class="pi pi-home text-primary-600"></i>
-            </div>
-
             <div>
               <h2 class="text-xl font-semibold text-slate-900 leading-tight">
                 {{ currentPageTitle }}
