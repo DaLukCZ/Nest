@@ -193,7 +193,6 @@ Aplikace používá JSON Server jako simulovaný REST backend. Databáze (`db.js
 
 ```bash
 git clone <url-repozitáře>
-cd nest-finished/nest
 ```
 
 ### 2. Instalace závislostí
