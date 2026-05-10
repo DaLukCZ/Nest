@@ -239,7 +239,7 @@ Všechny výčty a seznamy možností jsou definovány na jednom místě a impor
 - `SPECIES`, `SPECIES_LIST` - druhy ptáků
 - `SPECIES_VARIETIES`, `SPECIES_MUTATIONS` - odrůdy a mutace podle druhu
 - `GENDER`, `BIRD_STATUS` - pohlaví a stavy ptáků
-- `FOOD_TYPE_LIST`, `HEALTH_TYPE_LIST` - typy krmiva a zdravotních záznamů (v `<script>` bloku nikdy nepoužívej `$t()`!)
+- `FOOD_TYPE_LIST`, `HEALTH_TYPE_LIST` - typy krmiva a zdravotních záznamů
 - `OCCUPANCY_THRESHOLDS` - hranice pro bezpečnou / varovnou / nebezpečnou obsazenost
 
 ### Pomocné funkce (`src/utils/index.js`)
@@ -262,7 +262,7 @@ Odstraňuje opakující se kód ve views. Stačí zavolat `useCrud(apiService, {
 
 - **`StatusBadge`** - barevný odznak stavu (zelená/modrá/růžová/červená/oranžová/jantarová/šedá/fialová)
 - **`StatCard`** - karta s metrikou, ikonou a barevným akcentem
-- **`EmptyState`** - zobrazí se, když nejsou žádná data; obsahuje ikonu, titulek, popis a volitelný slot pro akci
+- **`EmptyState`** - zobrazí se, když nejsou žádná data - obsahuje ikonu, titulek, popis a volitelný slot pro akci
 - **`DeleteConfirmDialog`** - modální dialog nahrazující nativní `confirm()`
 - **`OccupancyBar`** - barevný ukazatel obsazenosti voliéry
 
